@@ -13,7 +13,6 @@ function App() {
     features: ["video", "audio", "settings", "users", "chat", "share"],
   };
 
-
   function getVideoSDKJWT() {
     sessionContainer = document.getElementById("sessionContainer");
 
