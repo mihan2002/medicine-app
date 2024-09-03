@@ -1,0 +1,598 @@
+.medai-connect {
+  position: absolute;
+  top: 1.75rem;
+  left: 5.313rem;
+  line-height: 2.875rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 7.5rem;
+  height: 2.875rem;
+}
+.credit-card-1-icon,
+.loan-1-icon,
+.service-1-icon,
+.settings-solid-1 {
+  position: absolute;
+  top: 24rem;
+  left: -0.062rem;
+  width: 1.563rem;
+  height: 1.563rem;
+  overflow: hidden;
+  display: none;
+}
+.credit-card-1-icon,
+.loan-1-icon,
+.settings-solid-1 {
+  top: 32rem;
+  left: -0.187rem;
+}
+.credit-card-1-icon,
+.loan-1-icon {
+  top: 16rem;
+  left: -0.062rem;
+  width: 1.625rem;
+  height: 1.625rem;
+}
+.loan-1-icon {
+  top: 20.063rem;
+  width: 1.563rem;
+  height: 1.563rem;
+}
+.appointments,
+.find-a-doctor,
+.notifications2 {
+  position: absolute;
+  top: 4.125rem;
+  left: 3.188rem;
+  font-weight: 500;
+}
+.find-a-doctor,
+.notifications2 {
+  top: 8.125rem;
+}
+.find-a-doctor {
+  top: 12.125rem;
+  color: var(--color-mediumslateblue-200);
+}
+.credit-cards,
+.loans,
+.my-privileges,
+.services,
+.setting {
+  position: absolute;
+  top: 16.125rem;
+  left: 3.188rem;
+  font-weight: 500;
+  display: none;
+}
+.loans,
+.my-privileges,
+.services,
+.setting {
+  top: 20.125rem;
+}
+.my-privileges,
+.services,
+.setting {
+  top: 24.125rem;
+}
+.my-privileges,
+.setting {
+  top: 28.125rem;
+}
+.setting {
+  top: 32.125rem;
+}
+.econometrics-1-icon,
+.home-2-icon {
+  position: absolute;
+  width: 1.563rem;
+  height: 1.563rem;
+  overflow: hidden;
+}
+.econometrics-1-icon {
+  top: 28rem;
+  left: -0.062rem;
+  display: none;
+}
+.home-2-icon {
+  top: 0;
+  left: 0;
+}
+.my-care {
+  position: absolute;
+  top: 0.125rem;
+  left: 3.188rem;
+  font-weight: 500;
+}
+.home-2-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.688rem;
+  height: 1.563rem;
+}
+.service-1-parent {
+  position: absolute;
+  top: 8.188rem;
+  left: 0;
+  width: 10.813rem;
+  height: 13.5rem;
+}
+.sidebar-menu,
+.sidebar-menu-child {
+  position: absolute;
+  top: 0;
+  height: 74rem;
+}
+.sidebar-menu-child {
+  left: 12.813rem;
+  background-color: var(--color-aliceblue-300);
+  width: 0.063rem;
+}
+.sidebar-menu {
+  left: 2.75rem;
+  width: 12.875rem;
+  font-size: var(--paragraph-lead-size);
+  color: var(--color-darkgray-100);
+}
+.logo-icon {
+  position: absolute;
+  top: 1.938rem;
+  left: 2.375rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: cover;
+}
+.notifications-icon,
+.phosphornormalclipboardtext-icon,
+.search-icon {
+  position: absolute;
+  top: 12.313rem;
+  left: 2.75rem;
+  width: 1.631rem;
+  height: 1.563rem;
+}
+.notifications-icon,
+.search-icon {
+  top: 16.313rem;
+  width: 1.563rem;
+  overflow: hidden;
+}
+.search-icon {
+  top: 20.25rem;
+}
+.sidebar {
+  height: 73.438rem;
+  width: 15.625rem;
+  position: relative;
+  background-color: var(--gray-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.bg {
+  height: 67.688rem;
+  width: 74.375rem;
+  position: absolute;
+  margin: 0 !important;
+  top: -2.687rem;
+  right: -4.937rem;
+  background-color: var(--color-whitesmoke-100);
+}
+.doctor-image-icon {
+  height: 10.563rem;
+  width: 10.563rem;
+  position: relative;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.dr-john-doe {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--headline-3-size);
+  font-weight: 600;
+  font-family: inherit;
+}
+.specialty-cardiology {
+  margin-block-start: 0;
+  margin-block-end: 6px;
+}
+.specialty-cardiology-container,
+.stars1-5google-starsgoogle-s-icon {
+  align-self: stretch;
+  position: relative;
+}
+.stars1-5google-starsgoogle-s-icon {
+  height: 1.125rem;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.stars-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-12xs) 0 0;
+}
+.rating-count {
+  width: 2.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.stars-container-parent {
+  width: 9.063rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  color: var(--color-lightgray);
+}
+.dr-john-doe-parent,
+.name-and-specialty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dr-john-doe-parent {
+  align-self: stretch;
+  gap: 0.781rem;
+}
+.name-and-specialty {
+  flex: 1;
+  padding: var(--padding-5xs) 0 0;
+  box-sizing: border-box;
+  min-width: 17.5rem;
+  max-width: 100%;
+}
+.doctor-image-parent {
+  width: 43rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5.5rem;
+  max-width: 100%;
+}
+.button-container,
+.doctor-image-parent,
+.doctor-info {
+  display: flex;
+  align-items: flex-start;
+}
+.button-container {
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.937rem 0 0;
+}
+.doctor-info {
+  width: 64.563rem;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: var(--gap-xl);
+}
+.profile-details-child {
+  align-self: stretch;
+  height: 0.125rem;
+  position: relative;
+  border-top: 2px solid var(--color-lightgray);
+  box-sizing: border-box;
+}
+.profile-content,
+.profile-details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.profile-details {
+  width: 66.5rem;
+  flex-direction: column;
+  gap: var(--gap-mid);
+}
+.profile-content {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-5xs);
+  box-sizing: border-box;
+}
+.about-the-doctor {
+  margin-block-start: 0;
+  margin-block-end: 16px;
+  font-weight: 500;
+}
+.dr-john-doe1 {
+  margin: 0;
+  font-size: var(--paragraph-lead-size);
+  color: var(--color-darkslategray-300);
+}
+.about-the-doctor-container {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-xl);
+}
+.profile-content-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+  max-width: 100%;
+}
+.md-from-harvard-medical-school {
+  margin: 0;
+  font-size: var(--paragraph-lead-size);
+  padding-left: var(--padding-5xl);
+  color: var(--color-darkslategray-300);
+}
+.qualifications-md-from-container {
+  width: 33.313rem;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.qualifications-md-from-harvard-parent {
+  width: 36.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  max-width: 100%;
+}
+.reviews1 {
+  margin-block-start: 0;
+  margin-block-end: 16px;
+}
+.reviews {
+  height: 1.875rem;
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  max-width: 100%;
+}
+.qualifications-details,
+.reviews-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.reviews-wrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-4xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.qualifications-details {
+  flex: 1;
+  flex-direction: column;
+  gap: 3.625rem;
+  max-width: 104%;
+  flex-shrink: 0;
+}
+.contact-information {
+  width: 19.938rem;
+  height: 1.938rem;
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.email-johndoegmailcom {
+  margin-block-start: 0;
+  margin-block-end: 14px;
+}
+.blank-line {
+  margin: 0;
+}
+.email-johndoegmailcom-container {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.contact-info {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-4xs) 0 var(--padding-3xs);
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: -0.438rem;
+  font-size: var(--paragraph-lead-size);
+}
+.contact-details {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: #f9f9f9;
+  overflow: hidden;
+  flex-direction: column;
+  padding: var(--padding-5xl) var(--padding-2xl) var(--padding-6xl);
+}
+.contact-details,
+.contact-details-wrapper,
+.qualifications-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.contact-details-wrapper {
+  width: 24.188rem;
+  flex-direction: column;
+  padding: var(--padding-9xl) 0 0;
+  margin-left: -26.188rem;
+}
+.qualifications-content {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 2rem 0 0;
+}
+.review-list {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-mid);
+}
+.container3,
+.qualifications-content-parent,
+.review-list,
+.reviews-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.reviews-container {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-sm) 0 var(--padding-7xs);
+  box-sizing: border-box;
+}
+.container3,
+.qualifications-content-parent {
+  flex-direction: column;
+}
+.qualifications-content-parent {
+  align-self: stretch;
+  gap: var(--gap-4xs);
+  font-size: var(--font-size-xl);
+}
+.container3 {
+  flex: 1;
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  overflow: hidden;
+  padding: var(--padding-42xl) var(--padding-34xl) var(--padding-16xl)
+    var(--padding-42xl);
+  box-sizing: border-box;
+  gap: var(--gap-41xl);
+  z-index: 1;
+}
+.body-content,
+.page-body {
+  flex-direction: row;
+  max-width: 100%;
+}
+.body-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.page-body {
+  align-self: stretch;
+  padding: 0 4.937rem 0 4.875rem;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--paragraph-lead-size);
+  color: var(--color-black);
+  font-family: var(--headings-h6);
+}
+.header-parent,
+.page-body,
+.user-doctor-profile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.header-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: 2.687rem;
+  max-width: calc(100% - 96px);
+}
+.user-doctor-profile {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-aliceblue-100);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-12xs) 0 0;
+  box-sizing: border-box;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--headings-h6);
+}
+@media screen and (max-width: 1200px) {
+  .container3 {
+    gap: var(--gap-11xl);
+    padding-left: var(--padding-11xl);
+    padding-right: var(--padding-7xl);
+    box-sizing: border-box;
+  }
+  .page-body {
+    padding-left: var(--padding-20xl);
+    padding-right: var(--padding-20xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .dr-john-doe {
+    font-size: var(--font-size-13xl);
+  }
+  .doctor-info {
+    flex-wrap: wrap;
+  }
+  .container3 {
+    padding-top: var(--padding-21xl);
+    padding-bottom: var(--padding-4xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .doctor-image-icon {
+    flex: 1;
+  }
+  .doctor-image-parent {
+    gap: 2.75rem;
+    flex-wrap: wrap;
+  }
+  .qualifications-md-from-harvard-parent {
+    gap: var(--gap-base);
+  }
+  .qualifications-details {
+    gap: 1.813rem;
+  }
+  .container3 {
+    gap: var(--gap-mini);
+    padding-top: var(--padding-7xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .header-parent {
+    gap: 1.313rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .medai-connect {
+    font-size: var(--font-size-xl);
+    line-height: 1.125rem;
+  }
+  .dr-john-doe {
+    font-size: var(--font-size-5xl);
+  }
+  .doctor-image-parent {
+    gap: 1.375rem;
+  }
+  .contact-information,
+  .reviews {
+    font-size: var(--font-size-base);
+  }
+}

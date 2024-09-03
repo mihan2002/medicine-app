@@ -1,0 +1,24 @@
+.button5 {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 2.5rem;
+  font-weight: 600;
+  font-family: var(--body-regular-400);
+  color: var(--gray-white);
+  text-align: left;
+}
+.button4 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs-5) var(--padding-6xl);
+  background-color: var(--primary-600);
+  border-radius: var(--br-141xl);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.button4:hover {
+  background-color: var(--color-dodgerblue);
+}

@@ -1,0 +1,228 @@
+.medai-connect2 {
+  width: 7.5rem;
+  position: absolute;
+  margin: 0 !important;
+  top: 1.75rem;
+  left: 3.813rem;
+  line-height: 92%;
+  font-weight: 600;
+  display: inline-block;
+}
+.service-1-icon1 {
+  width: 1.563rem;
+  height: 1.563rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.credit-card-1-icon1 {
+  width: 1.625rem;
+  height: 1.625rem;
+  overflow: hidden;
+  display: none;
+}
+.credit-card-1-icon1,
+.home-2-icon1,
+.my-care1 {
+  position: relative;
+  flex-shrink: 0;
+}
+.home-2-icon1 {
+  height: 1.563rem;
+  width: 1.563rem;
+  overflow: hidden;
+  min-height: 1.563rem;
+}
+.my-care1 {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 4.563rem;
+}
+.home-2-group,
+.my-care-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.home-2-group {
+  flex-direction: row;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-7xl);
+  color: var(--color-mediumslateblue-200);
+}
+.appointments1 {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 7.625rem;
+}
+.menu-item-labels {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.notifications3 {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 6.875rem;
+}
+.menu-item-labels1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-xs);
+}
+.credit-cards1,
+.loans1,
+.services1 {
+  width: 6.813rem;
+  height: 0;
+  position: relative;
+  font-weight: 500;
+  display: none;
+}
+.loans1,
+.services1 {
+  width: 3.25rem;
+}
+.services1 {
+  width: 4.688rem;
+}
+.my-privileges1 {
+  width: 7.25rem;
+  height: 0;
+  display: none;
+}
+.find-a-doctor1,
+.my-privileges1,
+.setting1 {
+  position: relative;
+  font-weight: 500;
+}
+.setting1 {
+  width: 3.875rem;
+  display: none;
+}
+.find-a-doctor1 {
+  display: inline-block;
+  min-width: 7.25rem;
+}
+.menu-item-labels2 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-7xs);
+}
+.menu4,
+.service-1-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.service-1-group {
+  align-self: stretch;
+  gap: var(--gap-22xl-7);
+}
+.menu4 {
+  flex: 1;
+  padding: var(--padding-112xl) 0 0;
+}
+.menu-divider {
+  align-self: stretch;
+  width: 0.063rem;
+  position: relative;
+  background-color: var(--color-aliceblue-300);
+}
+.sidebar-menu1 {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  flex-shrink: 0;
+  z-index: 1;
+  font-size: var(--paragraph-lead-size);
+  color: var(--color-darkgray-100);
+}
+.logo-icon1 {
+  height: 2.25rem;
+  width: 2.25rem;
+  position: absolute;
+  margin: 0 !important;
+  top: 1.938rem;
+  left: 0.875rem;
+  object-fit: cover;
+  z-index: 2;
+}
+.notifications-icon1,
+.phosphornormalclipboardtext-icon1,
+.search-icon1 {
+  height: 1.563rem;
+  width: 1.631rem;
+  position: absolute;
+  margin: 0 !important;
+  top: 12.313rem;
+  left: 1.25rem;
+  z-index: 2;
+}
+.notifications-icon1,
+.search-icon1 {
+  width: 1.563rem;
+  top: 16.313rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.search-icon1 {
+  top: 20.25rem;
+}
+.search-bar1,
+.sidebar1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.search-bar1 {
+  width: 14.125rem;
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 0 0 var(--padding-xl);
+  box-sizing: border-box;
+  position: relative;
+}
+.sidebar1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--gray-white);
+  width: 15.625rem;
+  height: 73.438rem;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 2;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--headings-h6);
+}
+@media screen and (max-width: 450px) {
+  .medai-connect2 {
+    font-size: var(--font-size-xl);
+    line-height: 1.125rem;
+  }
+}
