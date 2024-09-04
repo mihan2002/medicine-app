@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "./output.css";
+
 import UserCreateAccount from "./pages/UserCreateAccount";
 import UserDoctorProfile from "./pages/UserDoctorProfile";
 import UserDoctosList from "./pages/UserDoctosList";
