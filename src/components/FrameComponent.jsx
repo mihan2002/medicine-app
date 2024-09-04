@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
-import "./FrameComponent.css";
 
 const FrameComponent = ({
   className = "",
@@ -29,27 +28,35 @@ const FrameComponent = ({
   }, [propFlex1]);
 
   return (
-    <div className={`frame-parent ${className}`} style={frameDivStyle}>
-      <div className="line-wrapper">
-        <div className="frame-child" />
+    <div
+      className={`self-stretch flex flex-row items-start justify-center gap-[1.5rem] text-center text-[0.75rem] text-slategray-300 font-headings-h6 mq450:flex-wrap ${className}`}
+      style={frameDivStyle}
+    >
+      <div className="w-[7.125rem] flex flex-col items-start justify-start pt-[0.562rem] px-[0rem] pb-[0rem] box-border">
+        <div className="self-stretch h-[0.063rem] relative border-aliceblue-200 border-t-[1px] border-solid box-border" />
       </div>
-      <div className="frame-group" style={frameDiv1Style}>
+      <div
+        className="flex-1 flex flex-row items-start justify-start gap-[1.5rem] min-w-[11.625rem]"
+        style={frameDiv1Style}
+      >
         <div
-          className="or-do-it-via-other-accounts-parent"
+          className="flex-1 flex flex-col items-start justify-start gap-[1.5rem]"
           style={frameDiv2Style}
         >
-          <div className="or-do-it1">or do it via other accounts</div>
-          <div className="frame-wrapper">
+          <div className="relative tracking-[-0.08px] leading-[1.125rem] font-medium">
+            or do it via other accounts
+          </div>
+          <div className="flex flex-row items-start justify-start py-[0rem] px-[3rem]">
             <img
-              className="frame-item"
+              className="h-[3.25rem] w-[3.25rem] relative"
               loading="lazy"
               alt=""
               src="/frame-1018.svg"
             />
           </div>
         </div>
-        <div className="line-wrapper">
-          <div className="frame-child" />
+        <div className="w-[7.125rem] flex flex-col items-start justify-start pt-[0.562rem] px-[0rem] pb-[0rem] box-border">
+          <div className="self-stretch h-[0.063rem] relative border-aliceblue-200 border-t-[1px] border-solid box-border" />
         </div>
       </div>
     </div>
