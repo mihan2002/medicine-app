@@ -12,3 +12,7 @@ body {
 ::after {
   border-width: 0;
 }
+
+:root{
+  --color-bg:rgba(242, 247, 255, 1)
+}

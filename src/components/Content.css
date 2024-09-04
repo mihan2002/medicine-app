@@ -1,0 +1,204 @@
+.appointment-child {
+  width: 20.188rem;
+  height: 20.188rem;
+  position: relative;
+  border-radius: var(--br-6xl);
+  display: none;
+  max-width: 100%;
+}
+.phosphornormalclipboardtext-icon2 {
+  height: 10.4rem;
+  width: 10.4rem;
+  position: relative;
+  z-index: 1;
+}
+.content-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-46xl) 0 var(--padding-38xl);
+}
+.appointment-manager {
+  width: 17.606rem;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  z-index: 1;
+}
+.appointment {
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0.563rem;
+  box-shadow: 0 4px 13.6px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-33xl-2) var(--padding-mid) var(--padding-35xl-3);
+  box-sizing: border-box;
+  gap: var(--gap-xl-7);
+  max-width: 100%;
+}
+.material-symbolsprescriptions {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.phosphornormalpill-icon {
+  height: 10.375rem;
+  width: 10.375rem;
+  position: relative;
+  z-index: 2;
+}
+.phosphornormalpill-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-38xl) 0 var(--padding-40xl);
+}
+.prescriptions1 {
+  align-self: stretch;
+  height: 1.838rem;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 2;
+}
+.prescriptions {
+  width: 20.188rem;
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 23.438rem;
+  box-shadow: 0 4px 13.6px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-37xl) var(--padding-xl) var(--padding-35xl-3);
+  box-sizing: border-box;
+  gap: var(--gap-mid-3);
+  max-width: 100%;
+  z-index: 1;
+}
+.phosphornormalquestion-icon {
+  height: 10.375rem;
+  width: 10.375rem;
+  position: relative;
+  z-index: 1;
+}
+.ask-a-doctor1 {
+  align-self: stretch;
+  height: 1.838rem;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.ask-a-doctor {
+  width: 20.188rem;
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 46.313rem;
+  box-shadow: 0 4px 13.6px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-37xl) var(--padding-xl) var(--padding-35xl-3);
+  box-sizing: border-box;
+  gap: var(--gap-mid-3);
+  max-width: 100%;
+}
+.message-square-icon {
+  height: 10.375rem;
+  width: 10.375rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.find-a-doc,
+.messages2 {
+  width: 20.188rem;
+  margin: 0 !important;
+  top: 22.813rem;
+  box-shadow: 0 4px 13.6px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-37xl) var(--padding-xl) var(--padding-35xl-3);
+  gap: var(--gap-mid-3);
+}
+.messages2 {
+  position: absolute;
+  left: 0.563rem;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.find-a-doc {
+  left: 23.438rem;
+}
+.content20,
+.find-a-doc,
+.lab-results {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.lab-results {
+  width: 20.188rem;
+  margin: 0 !important;
+  top: 22.813rem;
+  left: 46.313rem;
+  box-shadow: 0 4px 13.6px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-6xl);
+  background-color: var(--gray-white);
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-37xl) var(--padding-xl) var(--padding-35xl-3);
+  gap: var(--gap-mid-3);
+}
+.content20 {
+  top: 10.625rem;
+  left: 19.456rem;
+  width: 67.063rem;
+  height: 43rem;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0 var(--padding-4xs);
+  gap: 2.625rem 2.562rem;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--headings-h6);
+}
+@media screen and (max-width: 450px) {
+  .appointment-manager,
+  .ask-a-doctor1,
+  .prescriptions1 {
+    font-size: var(--font-size-base);
+  }
+}

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import PropTypes from "prop-types";
+import "./Header.css";
 
 const Header = ({
   className = "",
@@ -44,31 +45,17 @@ const Header = ({
   }, [userAvatarMargin]);
 
   return (
-    <header
-      className={`absolute top-[0rem] left-[-0.25rem] w-full flex flex-row items-start justify-between py-[1.562rem] pl-[7.125rem] pr-[1.875rem] box-border gap-[1.25rem] max-w-full text-left text-[1.563rem] text-black font-headings-h6 mq450:pl-[1.25rem] mq450:box-border mq725:pl-[3.563rem] mq725:box-border ${className}`}
-      style={headerStyle}
-    >
-      <div className="h-full w-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem] bg-gray-white" />
-      <div
-        className="w-[7.5rem] flex flex-col items-start justify-start pt-[0.187rem] px-[0rem] pb-[0rem] box-border"
-        style={connectHeaderStyle}
-      >
-        <div
-          className="self-stretch relative leading-[92%] font-semibold z-[1]"
-          style={medAiConnectStyle}
-        >
+    <header className={`header ${className}`} style={headerStyle}>
+      <div className="header-child" />
+      <div className="connect-header" style={connectHeaderStyle}>
+        <div className="medai-connect1" style={medAiConnectStyle}>
           MedAi Connect
         </div>
       </div>
-      <div className="flex flex-row items-start justify-start gap-[1.562rem]">
+      <div className="user-avatar">
+        <img className="user-avatar-child" loading="lazy" alt="" src={group3} />
         <img
-          className="self-stretch w-[2.563rem] relative max-h-full min-h-[3.125rem] z-[1]"
-          loading="lazy"
-          alt=""
-          src={group3}
-        />
-        <img
-          className="h-[3.125rem] w-[3.125rem] relative rounded-[50%] object-cover min-h-[3.125rem] z-[1]"
+          className="avatar-icon"
           loading="lazy"
           alt=""
           src="/ellipse-89@2x.png"

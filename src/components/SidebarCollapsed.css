@@ -1,0 +1,107 @@
+.logo-icon2,
+.medai-connect3 {
+  position: relative;
+  display: none;
+}
+.medai-connect3 {
+  height: 0;
+  width: 7.5rem;
+  line-height: 92%;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.logo-icon2 {
+  height: 2.25rem;
+  width: 2.25rem;
+  object-fit: cover;
+}
+.home-2-icon2,
+.menu-icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  position: relative;
+}
+.home-2-icon2 {
+  width: 1.563rem;
+  height: 1.563rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.phosphornormalclipboardtext-icon3 {
+  width: 1.631rem;
+  height: 1.563rem;
+  position: relative;
+}
+.home-2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-20xl-3);
+}
+.sidebar-content-inner {
+  width: 1.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-12xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+}
+.sidebar-content,
+.sidebar-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.sidebar-content {
+  align-items: flex-end;
+  gap: var(--gap-44xl);
+}
+.sidebar-content-wrapper {
+  align-items: flex-start;
+  padding: var(--padding-19xl) 0 0;
+}
+.sidebar-background {
+  align-self: stretch;
+  width: 0.063rem;
+  position: relative;
+  background-color: var(--color-aliceblue-300);
+}
+.sidebar-collapsed {
+  height: 78.625rem;
+  width: 6rem;
+  background-color: var(--gray-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 0 var(--padding-64xl) var(--padding-14xl);
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+  z-index: 2;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-black);
+  font-family: var(--headings-h6);
+}
+@media screen and (max-width: 1200px) {
+  .sidebar-collapsed {
+    padding-bottom: var(--padding-35xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .sidebar-collapsed {
+    padding-bottom: var(--padding-16xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .medai-connect3 {
+    font-size: var(--font-size-xl);
+    line-height: 1.125rem;
+  }
+}
