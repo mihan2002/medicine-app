@@ -16,6 +16,9 @@ const UserLogin = () => {
             </div>
             <p>Forgot Password?</p>
             <button type="submit">Login</button>
+            <p>Or do it via other accounts</p>
+            <img src="src\assets\googlelogo.png" alt="google-logo" />
+            <p>Don't have an account? <b>Sign Up</b></p>
           </form>
         </div>
      

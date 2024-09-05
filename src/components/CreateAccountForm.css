@@ -30,6 +30,24 @@
     font-weight: normal;
     font-size: 14px;
   }
+  select {
+    width: 424px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(237, 242, 247, 1);
+  }
+
+
+  option{
+    width: 424px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(237, 242, 247, 1);
+  }
   
   input {
     width: 424px;
