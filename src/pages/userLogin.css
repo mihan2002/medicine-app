@@ -7,7 +7,7 @@
     height:800px;
     justify-content: center;
     align-items: center;
-    margin: 30px 30px 30px 100px;
+    margin: 50px auto;
     flex-direction: row;
     overflow: hidden;
 }
@@ -45,9 +45,39 @@
     height: 100%; /* Ensure the overlay takes up the full height */
     flex-direction: column;
 }
+
+.text-overlay h2{
+  padding: 15px;
+}
+.text-overlay p{
+  font-size: 18px;
+  font-weight: normal;
+}
+
   /* Form container styling */
   .form-container {
     flex: 1;
-    padding: 20px;
+    padding: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+  .form-container h2{
+    padding: 30px;
+    text-align: center;
+    font-size: 28px;
+  }
+  .form-container p{
+    text-align: center;
+    font-size: 16px;
+
+  }
+  .form{
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    margin: 30px auto;
   }
   
