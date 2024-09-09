@@ -1,0 +1,36 @@
+.navbar-container {
+  display: flex;
+  justify-content: flex-end; /* Ensures the content stays at the right */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  padding-right: 40px; /* Ensure full width of the container */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Pushes the items to the far right */
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 24px;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: black;
+}
+
+.user-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}

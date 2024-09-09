@@ -1,0 +1,65 @@
+.doctor-card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .doctor-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .doctor-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 8px 0 4px;
+  }
+  
+  .doctor-specialty {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+  }
+  
+  .doctor-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+  
+  .rating-value {
+    font-size: 14px;
+    color: #333;
+    margin-left: 5px;
+  }
+  
+  .review-count {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .view-button {
+    padding: 10px 20px;
+    background-color: #E0E8FF;
+    border: none;
+    border-radius: 8px;
+    color: #1A73E8;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-button:hover {
+    background-color: #D1D8FF;
+  }
+  
