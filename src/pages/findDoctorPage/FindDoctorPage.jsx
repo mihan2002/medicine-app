@@ -21,8 +21,11 @@ const FindDoctorPage = () => {
           onProfileClick={handleProfileClick}
         />
         <div className="doctor-list-header">
-          <h2>Connect With Our Top-Rated Doctors For Personalized Medical Care.</h2>
+          <h2>
+            Connect With Our Top-Rated Doctors For Personalized Medical Care.
+          </h2>
         </div>
+        <div className="inner-main-content">
         <div className="search-and-filter">
           <input type="text" className="search-input" placeholder="Search" />
           <button className="filter-btn">
@@ -36,6 +39,7 @@ const FindDoctorPage = () => {
           <DoctorCard />
           <DoctorCard />
           <DoctorCard />
+        </div>
         </div>
       </div>
     </div>

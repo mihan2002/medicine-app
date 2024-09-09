@@ -1,7 +1,7 @@
 .find-doctor-page {
   display: flex;
   height: 100vh;
-  background-color: #f7f7f7; /* Light background color */
+  background-color: #F2F7FF; 
 }
 
 .sidebar {
@@ -17,6 +17,14 @@
   padding-right: 28px;
   padding-left: 0px;
   padding-top: 0px;
+  background-color: #e9f0ff;
+}
+.inner-main-content {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 10px;
 }
 
 .navbar-container {

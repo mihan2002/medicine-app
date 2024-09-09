@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { FaHome, FaClipboardList, FaBell, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import the useNavigate hook from react-router-dom
 import "./Sidebar.css";
 import logo from "./logo.png"; // Import your logo here
 
 const Sidebar = () => {
-  // State to manage active menu item
   const [activeItem, setActiveItem] = useState("My Care");
+  const navigate = useNavigate(); // Initialize the navigate function
 
-  // Function to handle item click and set active item
-  const handleItemClick = (itemName) => {
+  // Function to handle item click, set active item, and navigate to the corresponding route
+  const handleItemClick = (itemName, route) => {
     setActiveItem(itemName);
+    navigate(route); // Navigate to the route when an item is clicked
   };
 
   return (
@@ -24,7 +26,7 @@ const Sidebar = () => {
       <ul className="sidebar-menu">
         <li
           className={`menu-item ${activeItem === "My Care" ? "active" : ""}`}
-          onClick={() => handleItemClick("My Care")}
+          onClick={() => handleItemClick("My Care", "/my-care")}
         >
           <FaHome
             size={20}
@@ -36,7 +38,7 @@ const Sidebar = () => {
           className={`menu-item ${
             activeItem === "Appointments" ? "active" : ""
           }`}
-          onClick={() => handleItemClick("Appointments")}
+          onClick={() => handleItemClick("Appointments", "/appointments")}
         >
           <FaClipboardList
             size={20}
@@ -48,7 +50,7 @@ const Sidebar = () => {
           className={`menu-item ${
             activeItem === "Notifications" ? "active" : ""
           }`}
-          onClick={() => handleItemClick("Notifications")}
+          onClick={() => handleItemClick("Notifications", "/notifications")}
         >
           <FaBell
             size={20}
@@ -60,7 +62,7 @@ const Sidebar = () => {
           className={`menu-item ${
             activeItem === "Find a Doctor" ? "active" : ""
           }`}
-          onClick={() => handleItemClick("Find a Doctor")}
+          onClick={() => handleItemClick("Find a Doctor", "/find-doctor")}
         >
           <FaSearch
             size={20}

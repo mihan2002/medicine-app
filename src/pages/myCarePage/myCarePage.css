@@ -1,0 +1,72 @@
+/* Container for the dashboard page */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f7f7f7; /* Light background color */
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: white;
+    border-right: 1px solid #ddd;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+  }
+  
+  .navbar-container {
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .content-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Grid container for the main dashboard items */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Enforce 3 items per row */
+    gap: 30px; /* Increase the gap between items */
+    padding: 40px;
+  }
+  
+  /* Each grid item */
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px; /* Slightly increase the border radius */
+    padding: 30px; /* Increase padding to make the items larger */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+    min-height: 200px; /* Set a minimum height for each grid item */
+  }
+  
+  /* Hover effect */
+  .grid-item:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Make the shadow more prominent on hover */
+  }
+  
+  .grid-icon {
+    font-size: 60px; /* Increase the size of the icon */
+    color: #333;
+  }
+  
+  .grid-item span {
+    margin-top: 10px;
+    font-size: 18px; /* Slightly increase font size */
+    font-weight: 500;
+    color: #333;
+  }
+  
