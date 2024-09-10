@@ -1,27 +1,53 @@
 import { useState } from "react";
-import { FaHome, FaClipboardList, FaBell, FaSearch } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Import the useNavigate hook from react-router-dom
+import {
+  FaHome,
+  FaClipboardList,
+  FaBell,
+  FaSearch,
+  FaBars,
+} from "react-icons/fa"; // Added FaBars for toggle button
+import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
-import logo from "./logo.png"; // Import your logo here
+import logo from "./logo.png";
 
-const Sidebar = () => {
-  const [activeItem, setActiveItem] = useState("My Care");
-  const navigate = useNavigate(); // Initialize the navigate function
+const Sidebar = ({ active }) => {
+  const [activeItem, setActiveItem] = useState(active);
+  const [isCollapsed, setIsCollapsed] = useState(false); // State to handle sidebar collapse
+  const navigate = useNavigate();
 
-  // Function to handle item click, set active item, and navigate to the corresponding route
   const handleItemClick = (itemName, route) => {
     setActiveItem(itemName);
-    navigate(route); // Navigate to the route when an item is clicked
+    navigate(route);
+  };
+
+  const handleToggleSidebar = () => {
+    setIsCollapsed(!isCollapsed); // Toggle collapsed state
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
-        <img src={logo} alt="Logo" className="sidebar-logo" />
-        <div className="sidebar-brand">
-          <span>MedAi</span>
-          <span>Connect</span>
-        </div>
+        {!isCollapsed && (
+          <><button className="toggle-btn" onClick={handleToggleSidebar}>
+            <img
+              src={logo}
+              alt="Logo"
+              className={`sidebar-logo ${isCollapsed ? "hidden" : ""}`}
+            />
+            <div className="sidebar-brand">
+              <span>MedAi</span>
+              <span>Connect</span>
+            </div>
+            </button>
+          </>
+        )}
+        {isCollapsed && (
+          <>
+            <button className="toggle-btn" onClick={handleToggleSidebar}>
+              <FaBars size={20} />
+            </button>
+          </>
+        )}
       </div>
       <ul className="sidebar-menu">
         <li
@@ -32,7 +58,7 @@ const Sidebar = () => {
             size={20}
             color={activeItem === "My Care" ? "#1A73E8" : "#B0B0B0"}
           />
-          <span>My Care</span>
+          {!isCollapsed && <span>My Care</span>}
         </li>
         <li
           className={`menu-item ${
@@ -44,7 +70,7 @@ const Sidebar = () => {
             size={20}
             color={activeItem === "Appointments" ? "#1A73E8" : "#B0B0B0"}
           />
-          <span>Appointments</span>
+          {!isCollapsed && <span>Appointments</span>}
         </li>
         <li
           className={`menu-item ${
@@ -56,7 +82,7 @@ const Sidebar = () => {
             size={20}
             color={activeItem === "Notifications" ? "#1A73E8" : "#B0B0B0"}
           />
-          <span>Notifications</span>
+          {!isCollapsed && <span>Notifications</span>}
         </li>
         <li
           className={`menu-item ${
@@ -68,7 +94,7 @@ const Sidebar = () => {
             size={20}
             color={activeItem === "Find a Doctor" ? "#1A73E8" : "#B0B0B0"}
           />
-          <span>Find a Doctor</span>
+          {!isCollapsed && <span>Find a Doctor</span>}
         </li>
       </ul>
     </div>

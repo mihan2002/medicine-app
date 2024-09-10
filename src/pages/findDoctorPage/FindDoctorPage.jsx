@@ -14,7 +14,7 @@ const FindDoctorPage = () => {
 
   return (
     <div className="find-doctor-page">
-      <Sidebar />
+      <Sidebar active="Find a Doctor"/>
       <div className="main-content">
         <NavBar
           userImageLink={userImageLink}

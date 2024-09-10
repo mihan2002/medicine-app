@@ -3,19 +3,25 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; /* Lighter background for a cleaner look */
+  padding: 15px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Softer shadow for better contrast */
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow-y: auto;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  overflow: hidden; /* Ensure proper layout when collapsed */
+}
+
+.sidebar.collapsed {
+  width: 80px; /* Collapsed width */
 }
 
 .sidebar-header {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Align items to the start */
   margin-bottom: 20px;
 }
 
@@ -25,21 +31,20 @@
   margin-right: 10px;
 }
 
-/* Update brand to display in two lines and change color to black */
+.sidebar-logo.hidden {
+  display: none; /* Hide logo when sidebar is collapsed */
+}
+
 .sidebar-brand {
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 18px; /* Adjusted font size for better visibility */
   font-weight: 600;
-  color: black; /* Change the brand name to black */
+  color: #333; /* Darker color for text */
 }
 
-.sidebar-brand span:first-child {
-  font-size: 20px;
-}
-
-.sidebar-brand span:last-child {
-  font-size: 18px;
+.sidebar.collapsed .sidebar-brand {
+  display: none; /* Hide brand text when sidebar is collapsed */
 }
 
 .sidebar-menu {
@@ -51,25 +56,53 @@
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 12px 10px;
+  margin-bottom: 15px;
   color: #b0b0b0;
   cursor: pointer;
-  transition: color 0.3s ease;
-  margin-bottom: 15px; 
-}
-
-.menu-item.active {
-  color: #1a73e8;
-}
-
-.menu-item span {
-  margin-left: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px; /* Rounded corners for items */
 }
 
 .menu-item:hover {
-  color: #1a73e8;
+  background-color: rgba(26, 115, 232, 0.1); /* Highlight on hover */
+}
+
+.menu-item.active {
+  color: #1a73e8; /* Active item color */
+  background-color: rgba(26, 115, 232, 0.15); /* Active background highlight */
+}
+
+.menu-item span {
+  margin-left: 15px; /* More space between icon and text */
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .menu-item svg {
-  flex-shrink: 0;
+  flex-shrink: 0; /* Ensure icons do not resize */
+}
+
+.sidebar.collapsed .menu-item span {
+  opacity: 0; /* Hide text when collapsed */
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b0b0b0;
+  padding: 5px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.toggle-btn:hover {
+  color: #1a73e8;
+}
+
+.sidebar.collapsed .toggle-btn {
+  justify-content: center; /* Center the toggle button in collapsed mode */
 }

@@ -2,7 +2,7 @@ import NavBar from "../../components/navBar/NavBar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./myCarePage.css"; // Create this CSS file for styling
 import { FaClipboard, FaPills, FaQuestionCircle, FaEnvelope, FaSearch, FaVial } from "react-icons/fa"; // Import icons from react-icons
- // Create this CSS file for styling
+ 
 
 const MyCarePage = () => {
   const userImageLink = "https://via.placeholder.com/40"; // Replace with actual image URL
@@ -13,7 +13,7 @@ const MyCarePage = () => {
 
   return (
     <div className="dashboard-container">
-      <Sidebar />
+      <Sidebar active="My Care" />
       <div className="main-content">
         <NavBar userImageLink={userImageLink} onProfileClick={handleProfileClick} />
         

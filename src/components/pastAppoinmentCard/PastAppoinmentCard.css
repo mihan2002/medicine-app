@@ -1,0 +1,65 @@
+/* Past Appointment Card Container */
+.past-appointment-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Doctor name and appointment details */
+  .doctor-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .appointment-details {
+    color: #333;
+  }
+  
+  .appointment-date, .appointment-time {
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  /* Add icons before text */
+  .icon {
+    margin-right: 5px;
+  }
+  
+  /* Status styling for Completed and Cancelled */
+  .appointment-status {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .status-completed {
+    background-color: #d4f8d4; /* Light green */
+    color: #28a745; /* Green text */
+  }
+  
+  .status-cancelled {
+    background-color: #f8d4d4; /* Light red */
+    color: #dc3545; /* Red text */
+  }
+  
+  /* Blue border on the left of the card */
+  .past-appointment-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #1a73e8; /* Blue color */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
