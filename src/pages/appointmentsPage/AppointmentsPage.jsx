@@ -1,5 +1,4 @@
-import NavBar from "../../components/navBar/NavBar";
-import Sidebar from "../../components/sidebar/Sidebar";
+
 import DoctorAppointmentCard from "../../components/doctorAppoinmentCard/DoctorAppoinmentCard";
 import PastAppointmentCard from "../../components/pastAppoinmentCard/PastAppoinmentCard";
 import { useState } from "react";
@@ -7,11 +6,6 @@ import "./AppointmentsPage.css";
 
 const AppointmentsPage = () => {
   const [activeTab, setActiveTab] = useState("scheduled");
-  const userImageLink = "https://via.placeholder.com/40"; // Replace with actual image URL
-
-  const handleProfileClick = () => {
-    console.log("Profile clicked");
-  };
 
   const handleJoinMeeting = (doctorName) => {
     alert(`Joining meeting for ${doctorName}`);
@@ -19,12 +13,9 @@ const AppointmentsPage = () => {
 
   return (
     <div className="appointments-container">
-      <Sidebar active="Appointments" />
+     
       <div className="main-content">
-        <NavBar
-          userImageLink={userImageLink}
-          onProfileClick={handleProfileClick}
-        />
+        
         <div className="appointments-content">
           <div className="tabs-container">
             <button

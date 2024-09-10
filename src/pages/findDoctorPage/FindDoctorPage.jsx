@@ -1,25 +1,13 @@
 import DoctorCard from "../../components/doctorCard/DoctorCard";
-import NavBar from "../../components/navBar/NavBar";
-import Sidebar from "../../components/sidebar/Sidebar";
-import { FaFilter } from "react-icons/fa"; // Import the filter icon
 
-import "./FindDoctorPage.css"; // CSS for main page layout
-
+import { FaFilter } from "react-icons/fa"; 
+import "./FindDoctorPage.css"; 
 const FindDoctorPage = () => {
-  const userImageLink = "https://via.placeholder.com/40";
 
-  const handleProfileClick = () => {
-    console.log("Profile clicked");
-  };
 
   return (
     <div className="find-doctor-page">
-      <Sidebar active="Find a Doctor"/>
       <div className="main-content">
-        <NavBar
-          userImageLink={userImageLink}
-          onProfileClick={handleProfileClick}
-        />
         <div className="doctor-list-header">
           <h2>
             Connect With Our Top-Rated Doctors For Personalized Medical Care.

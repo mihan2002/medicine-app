@@ -1,6 +1,6 @@
 .navbar-container {
   display: flex;
-  justify-content: flex-end; /* Ensures the content stays at the right */
+  justify-content: space-between; /* Distribute brand and right content */
   align-items: center;
   padding: 10px 20px;
   background-color: white;
@@ -9,10 +9,23 @@
   padding-right: 40px; /* Ensure full width of the container */
 }
 
+.navbar-brand {
+  display: flex;
+  flex-direction: column; /* Stack the brand on two lines */
+  align-items: flex-start; /* Align text to the start */
+  font-size: 18px;
+  font-weight: bold;
+  color: black; /* Set font color to black */
+}
+
+.brand-line {
+  line-height: 1.2; /* Adjust line height for better spacing */
+}
+
 .navbar-right {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Pushes the items to the far right */
+  margin-left: auto;
 }
 
 .notification-btn {

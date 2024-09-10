@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   FaHome,
   FaClipboardList,
@@ -9,10 +9,13 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import logo from "./logo.png";
+import { GlobalContext } from "../../GlobalContext";
 
+// eslint-disable-next-line react/prop-types
 const Sidebar = ({ active }) => {
   const [activeItem, setActiveItem] = useState(active);
-  const [isCollapsed, setIsCollapsed] = useState(false); // State to handle sidebar collapse
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const { setGlobalVariable } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const handleItemClick = (itemName, route) => {
@@ -21,23 +24,25 @@ const Sidebar = ({ active }) => {
   };
 
   const handleToggleSidebar = () => {
-    setIsCollapsed(!isCollapsed); // Toggle collapsed state
+    setIsCollapsed(!isCollapsed);
+    setGlobalVariable(!isCollapsed);
   };
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         {!isCollapsed && (
-          <><button className="toggle-btn" onClick={handleToggleSidebar}>
-            <img
-              src={logo}
-              alt="Logo"
-              className={`sidebar-logo ${isCollapsed ? "hidden" : ""}`}
-            />
-            <div className="sidebar-brand">
-              <span>MedAi</span>
-              <span>Connect</span>
-            </div>
+          <>
+            <button className="toggle-btn" onClick={handleToggleSidebar}>
+              <img
+                src={logo}
+                alt="Logo"
+                className={`sidebar-logo ${isCollapsed ? "hidden" : ""}`}
+              />
+              <div className="sidebar-brand">
+                <span>MedAi</span>
+                <span>Connect</span>
+              </div>
             </button>
           </>
         )}
