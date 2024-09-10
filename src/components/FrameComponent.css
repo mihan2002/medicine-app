@@ -1,0 +1,67 @@
+.frame-child {
+  align-self: stretch;
+  height: 0.063rem;
+  position: relative;
+  border-top: 1px solid var(--color-aliceblue-200);
+  box-sizing: border-box;
+}
+.line-wrapper {
+  width: 7.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-4xs) 0 0;
+  box-sizing: border-box;
+}
+.or-do-it1 {
+  position: relative;
+  letter-spacing: -0.08px;
+  line-height: 1.125rem;
+  font-weight: 500;
+}
+.frame-item {
+  height: 3.25rem;
+  width: 3.25rem;
+  position: relative;
+}
+.frame-wrapper,
+.or-do-it-via-other-accounts-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-wrapper {
+  flex-direction: row;
+  padding: 0 var(--padding-29xl);
+}
+.or-do-it-via-other-accounts-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-5xl);
+}
+.frame-group,
+.frame-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-5xl);
+}
+.frame-group {
+  flex: 1;
+  justify-content: flex-start;
+  min-width: 11.625rem;
+}
+.frame-parent {
+  align-self: stretch;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-slategray-300);
+  font-family: var(--headings-h6);
+}
+@media screen and (max-width: 450px) {
+  .frame-parent {
+    flex-wrap: wrap;
+  }
+}

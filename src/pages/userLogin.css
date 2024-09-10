@@ -1,0 +1,84 @@
+.container{
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    max-width: 1300px;
+    width: 100%;
+    height:800px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.aside {
+    height: 800px;
+    width: 50%; /* Adjust as needed */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo{
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    top: 10%;
+  }
+
+  .text-overlay {
+    position: absolute; /* Position the text over the image */
+    color: white; /* Change the text color as needed */
+    font-size: 24px; /* Adjust the font size */
+    text-align: center; /* Center the text */
+    padding: 10px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    display: flex; /* Use flexbox to center the text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 100%; /* Ensure the overlay takes up the full width */
+    height: 100%; /* Ensure the overlay takes up the full height */
+    flex-direction: column;
+}
+
+.text-overlay h2{
+  padding: 15px;
+}
+.text-overlay p{
+  font-size: 18px;
+  font-weight: normal;
+}
+
+  /* Form container styling */
+  .form-container {
+    flex: 1;
+    padding: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+  .form-container h2{
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    font-size: 28px;
+  }
+  .form-container p{
+    text-align: center;
+    font-size: 16px;
+
+  }
+  .form{
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    margin: 30px auto;
+  }
+  
