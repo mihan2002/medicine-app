@@ -9,19 +9,19 @@ import { GlobalContext } from "./GlobalContext";
 import { useContext } from "react";
 import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
-
+import UserLogin from "./pages/userLoginPage/userLogin";
 
 function App() {
   const { globalVariable } = useContext(GlobalContext);
-  
-      
+
   return (
     <div className="app-container">
       <Sidebar />
       <div className="main-content">
-        <NavBar isSidebarCollapsed={globalVariable}/>
+        <NavBar isSidebarCollapsed={globalVariable} />
         <Routes>
-        <Route path="/test" element={<DoctorProfile />} />
+          <Route path="/test" element={<DoctorProfile />} />
+          <Route path="/login" element={<UserLogin />} />
           <Route path="/my-care" element={<MyCarePage />} />
           <Route path="/appointments" element={<AppointmentsPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
