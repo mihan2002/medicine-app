@@ -13,12 +13,14 @@ import UserLogin from "./pages/userLoginPage/userLogin";
 
 function App() {
   const { globalVariable } = useContext(GlobalContext);
+  const { isLogInPage } = useContext(GlobalContext);
 
   return (
     <div className="app-container">
-      <Sidebar />
+      {!isLogInPage && <Sidebar />}
       <div className="main-content">
-        <NavBar isSidebarCollapsed={globalVariable} />
+        {!isLogInPage && <NavBar isSidebarCollapsed={globalVariable} />}
+
         <Routes>
           <Route path="/test" element={<DoctorProfile />} />
           <Route path="/login" element={<UserLogin />} />

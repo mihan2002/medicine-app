@@ -1,4 +1,4 @@
-import  { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 // Create the context
 export const GlobalContext = createContext();
@@ -7,9 +7,17 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   // Define your global variables here
   const [globalVariable, setGlobalVariable] = useState(false);
+  const [isLogInPage, setIsLogInPage] = useState(true); // New global variable
 
   return (
-    <GlobalContext.Provider value={{ globalVariable, setGlobalVariable }}>
+    <GlobalContext.Provider 
+      value={{ 
+        globalVariable, 
+        setGlobalVariable, 
+        isLogInPage, 
+        setIsLogInPage 
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

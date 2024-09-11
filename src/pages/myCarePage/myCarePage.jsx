@@ -1,16 +1,25 @@
-
-import "./myCarePage.css"; // Create this CSS file for styling
-import { FaClipboard, FaPills, FaQuestionCircle, FaEnvelope, FaSearch, FaVial } from "react-icons/fa"; // Import icons from react-icons
- 
+import { useEffect } from "react";
+import "./myCarePage.css";
+import {
+  FaClipboard,
+  FaPills,
+  FaQuestionCircle,
+  FaEnvelope,
+  FaSearch,
+  FaVial,
+} from "react-icons/fa";
+import { GlobalContext } from "../../GlobalContext";
+import { useContext } from "react";
 
 const MyCarePage = () => {
+  const { setIsLogInPage } = useContext(GlobalContext);
+  useEffect(() => {
+    setIsLogInPage(false);
+  }, []);
 
   return (
     <div className="dashboard-container">
-    
       <div className="main-content">
-       
-        
         <div className="grid-container">
           <div className="grid-item">
             <FaClipboard className="grid-icon" />

@@ -16,8 +16,10 @@ const Sidebar = ({ active }) => {
   const [activeItem, setActiveItem] = useState(active);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const { setGlobalVariable } = useContext(GlobalContext);
+
   const navigate = useNavigate();
 
+ 
   const handleItemClick = (itemName, route) => {
     setActiveItem(itemName);
     navigate(route);
