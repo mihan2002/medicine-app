@@ -50,9 +50,27 @@
     font-size: 16px;
     width: 424px;
     margin: 15px;
+    transition: color 0.3s ease; /* Smooth hover effect */
   }
   
   .login-button:hover {
     background-color: rgba(11, 76, 174, 1);
   }
+
+  .custom-link {
+    color: #777E90; /* Choose your preferred color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
   
+  .custom-link:hover {
+    color: #363636; /* Change color on hover */
+  }
+  .google-button img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .google-button:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+  }

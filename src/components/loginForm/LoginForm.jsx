@@ -76,14 +76,17 @@ const LoginForm = () => {
           />
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <p>Forgot Password?</p>
+        <p><a href="" className="custom-link">Forgot Password?</a></p>
         <button className="login-button" type="submit">
           Login
         </button>
         <p>Or do it via other accounts</p>
+        <a href="google-authlink" className="google-button">
         <img src="src/assets/googlelogo.png" alt="google-logo" />
+        </a>
+        
         <p>
-          Don't have an account? <b>Sign Up</b>
+          Don't have an account? <a href="#3" className="custom-link"><b>Sign Up</b></a>
         </p>
       </form>
     </div>
