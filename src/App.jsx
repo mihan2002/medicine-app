@@ -13,25 +13,23 @@ function App() {
   console.log("isAuthenticated :" + isAuthenticated);
   console.log("loading :" + loading);
   if (loading) {
-    // Optionally render a loading spinner or message
+    
     return <div>Loading...</div>;
   }
 
   return (
     <div className="app-container">
-      {/* {!isLogInPage && <Sidebar />} */}
-      <div className="main-content">
-        {/* {!isLogInPage && <NavBar isSidebarCollapsed={globalVariable} />} */}
 
+      <div className="main-content">
+        
         <Routes>
-          {/* Redirect to login if not authenticated */}
+         
           {!isAuthenticated && (
             <Route path="*" element={<Navigate to="/login" />} />
           )}
           {isAuthenticated && (
             <Route path="*" element={<Navigate to="/my-care" />} />
           )}
-
           {isAuthenticated && (
             <>
               <Route path="/my-care" element={<MyCarePage />} />
@@ -40,8 +38,6 @@ function App() {
               <Route path="/find-doctor" element={<FindDoctorPage />} />
             </>
           )}
-
-          {/* Public Routes */}
           <Route path="/login" element={<UserLogin />} />
           <Route path="/test" element={<DoctorProfile />} />
         </Routes>
