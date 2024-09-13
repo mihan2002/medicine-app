@@ -8,6 +8,7 @@ export const refreshToken = async () => {
     if (!storedRefreshToken) {
       throw new Error("No refresh token found.");
     }
+    console.log(import.meta.env.VITE_API_REFRESH_TOKEN_URL);
 
     // Make the request to the backend refresh endpoint
     const response = await fetch(import.meta.env.VITE_API_REFRESH_TOKEN_URL, {
@@ -15,17 +16,18 @@ export const refreshToken = async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include", // Include cookies if needed
+      credentials: "include", 
       body: JSON.stringify({ refreshToken: storedRefreshToken }), // Send refresh token in body
     });
+    console.log(response);
 
-    // If the refresh token is valid and the response is successful
+    
     if (response.ok) {
       const data = await response.json();
 
       // Store the new access token in cookies
       Cookies.set("access_token", data.accessToken, {
-        secure: process.env.NODE_ENV === "production", // Use true only in production
+        secure: true, // Use true only in production
         sameSite: "Strict", // 'None' if using cross-site cookies
         expires: 1 / 48, // 30 minutes expiry for access token
       });
@@ -33,7 +35,7 @@ export const refreshToken = async () => {
       // Optionally, update the refresh token if provided
       if (data.refreshToken) {
         Cookies.set("refresh_token", data.refreshToken, {
-          secure: process.env.NODE_ENV === "production",
+          secure: true,
           sameSite: "Strict",
           expires: 7, // 7 days expiry for refresh token
         });
