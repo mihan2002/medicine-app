@@ -9,7 +9,10 @@ import {
   FaVial,
 } from "react-icons/fa";
 import { GlobalContext } from "../../GlobalContext";
-import axios from "axios";
+import { fetchGraphQL } from "../../api/GraphQl";
+
+// Reusable function to make GraphQL API calls
+
 
 const MyCarePage = () => {
   const { setIsLogInPage } = useContext(GlobalContext);
@@ -17,45 +20,41 @@ const MyCarePage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
+  // Example patient ID (replace this with dynamic data)
+  const patientId = "123456"; // Replace with actual patient ID or fetch from another source
 
   useEffect(() => {
     setIsLogInPage(false);
 
     // Define the GraphQL query
     const query = `
-      query Query() {
-        getPatientByID() {
+      query GetPatientByID {
+        getPatientByID {
           firstName
           lastName
+          gender
         }
       }
     `;
 
-    // Make the API call with cookies
-    axios({
-      url: "http://localhost:4000/graphql",
-      method: "POST",
-      withCredentials: true, // Ensures cookies are sent with the request
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify({
-        query 
-      }),
-    })
-      .then((response) => {
-        console.log("API Response:", response.data); 
-        console.log( response);
-        
-        setData(response.data);
+    // Define the variables for the query
+    const variables = {
+      id: patientId, // Pass the patient ID
+    };
+
+    // Make the API call using the fetchGraphQL method
+    fetchGraphQL(query, variables)
+      .then((responseData) => {
+        console.log("API Response:", responseData);
+        setData(responseData);
         setLoading(false);
       })
       .catch((error) => {
+        console.error("Error during API call:", error);
         setError(error);
         setLoading(false);
       });
-  }, [setIsLogInPage]);
+  }, [setIsLogInPage, patientId]);
 
   // Handle loading, error, and data states
   if (loading) {
@@ -101,6 +100,7 @@ const MyCarePage = () => {
             <h3>Patient Data</h3>
             <p>First Name: {data.data.getPatientByID.firstName}</p>
             <p>Last Name: {data.data.getPatientByID.lastName}</p>
+            <p>Gender: {data.data.getPatientByID.gender}</p>
           </div>
         )}
       </div>
