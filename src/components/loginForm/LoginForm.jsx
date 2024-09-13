@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import "./LoginForm.css";
+import useTokenRefresh from "../../auth/useTokenRefresh";
 
 const LoginForm = () => {
+  const { setIsAuthenticated } = useTokenRefresh();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -13,11 +15,7 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const loginData = {
-      email,
-      password,
-    };
-    console.log(JSON.stringify(loginData));
+    const loginData = { email, password };
 
     try {
       const response = await fetch(import.meta.env.VITE_API_LOGIN_URL, {
@@ -27,20 +25,31 @@ const LoginForm = () => {
         },
         body: JSON.stringify(loginData),
       });
-      console.log(response);
 
       if (response.ok) {
         const data = await response.json();
-        // Save token (or any other data) to cookies
-        Cookies.set("authToken", data.token, { expires: 7 }); 
+        console.log(data);
 
-        // Navigate to another page
-        navigate("/my-care");
+        Cookies.set("access_token", data.accessToken, {
+          secure: true, // Should be true in production
+          sameSite: "Strict",
+          expires: 1 / 48, // 30 minutes expiry
+        });
+
+        Cookies.set("refresh_token", data.refreshToken, {
+          secure: true, // Should be true in production
+          sameSite: "Strict",
+          expires: 7, // 7 days expiry
+        });
+        setIsAuthenticated(true);
+        navigate("/");
 
         console.log("Login successful!", data);
       } else {
         const errorData = await response.json();
-        setErrorMessage(errorData.message || "Login failed");
+        setErrorMessage(
+          errorData.message || "Login failed. Please check your credentials."
+        );
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -52,12 +61,12 @@ const LoginForm = () => {
     <div className="form-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter your username"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -83,6 +92,7 @@ const LoginForm = () => {
         <p>Or do it via other accounts</p>
         <img src="src/assets/googlelogo.png" alt="google-logo" />
         <p>
+         
           Don't have an account? <b>Sign Up</b>
         </p>
       </form>
