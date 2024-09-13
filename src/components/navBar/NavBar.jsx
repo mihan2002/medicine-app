@@ -1,10 +1,14 @@
 import { FaBell } from "react-icons/fa"; 
 import "./NavBar.css"; 
+import { useContext } from "react";
+import { GlobalContext } from "../../GlobalContext";
 
-const NavBar = ({ userImageLink, onProfileClick, isSidebarCollapsed }) => {
+const NavBar = ({ userImageLink, onProfileClick }) => {
+  const { isCollapese } = useContext(GlobalContext); // Use global collapse state
+
   return (
     <div className="navbar-container">
-      {isSidebarCollapsed && (
+      {isCollapese && (
         <div className="navbar-brand">
           <span className="brand-line">MedAi</span> 
           <span className="brand-line">Connect</span>

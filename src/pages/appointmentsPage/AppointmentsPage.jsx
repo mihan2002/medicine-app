@@ -1,8 +1,9 @@
-
 import DoctorAppointmentCard from "../../components/doctorAppoinmentCard/DoctorAppoinmentCard";
 import PastAppointmentCard from "../../components/pastAppoinmentCard/PastAppoinmentCard";
 import { useState } from "react";
 import "./AppointmentsPage.css";
+import Sidebar from "../../components/sidebar/Sidebar";
+import NavBar from "../../components/navBar/NavBar";
 
 const AppointmentsPage = () => {
   const [activeTab, setActiveTab] = useState("scheduled");
@@ -13,9 +14,13 @@ const AppointmentsPage = () => {
 
   return (
     <div className="appointments-container">
-     
+      <Sidebar active="Appointments"   />
       <div className="main-content">
-        
+        <NavBar
+          userImageLink="/path-to-user-image.jpg"
+          onProfileClick={() => console.log("Profile clicked")}
+           
+        />
         <div className="appointments-content">
           <div className="tabs-container">
             <button

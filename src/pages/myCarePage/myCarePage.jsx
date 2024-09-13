@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import "./myCarePage.css";
 import {
   FaClipboard,
@@ -8,14 +8,11 @@ import {
   FaSearch,
   FaVial,
 } from "react-icons/fa";
-import { GlobalContext } from "../../GlobalContext";
 import { fetchGraphQL } from "../../api/GraphQl";
-
-// Reusable function to make GraphQL API calls
-
+import Sidebar from "../../components/sidebar/Sidebar";
+import NavBar from "../../components/navBar/NavBar";
 
 const MyCarePage = () => {
-  const { setIsLogInPage } = useContext(GlobalContext);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +21,7 @@ const MyCarePage = () => {
   const patientId = "123456"; // Replace with actual patient ID or fetch from another source
 
   useEffect(() => {
-    setIsLogInPage(false);
+    
 
     // Define the GraphQL query
     const query = `
@@ -54,7 +51,7 @@ const MyCarePage = () => {
         setError(error);
         setLoading(false);
       });
-  }, [setIsLogInPage, patientId]);
+  }, [ patientId]);
 
   // Handle loading, error, and data states
   if (loading) {
@@ -67,7 +64,13 @@ const MyCarePage = () => {
 
   return (
     <div className="dashboard-container">
+      <Sidebar active="My Care"   />
       <div className="main-content">
+        <NavBar
+          userImageLink="/path-to-user-image.jpg"
+          onProfileClick={() => console.log("Profile clicked")}
+           
+        />
         <div className="grid-container">
           <div className="grid-item">
             <FaClipboard className="grid-icon" />
@@ -94,9 +97,8 @@ const MyCarePage = () => {
             <span>Lab Results</span>
           </div>
         </div>
-        {/* Example of displaying the returned data */}
         {data && data.data && data.data.getPatientByID && (
-          <div>
+          <div className="patient-info">
             <h3>Patient Data</h3>
             <p>First Name: {data.data.getPatientByID.firstName}</p>
             <p>Last Name: {data.data.getPatientByID.lastName}</p>
