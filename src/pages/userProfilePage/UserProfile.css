@@ -77,7 +77,7 @@ h2 {
 
 .info-box {
   flex: 1;
-  margin: 0 20px;
+  margin: 0 15px;
   text-align: left;
   
 }
@@ -85,7 +85,7 @@ h2 {
 .info-box label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   text-align: left;
 }
 
@@ -94,8 +94,8 @@ h2 {
 .info-box select {
   padding: 10px;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid rgb(218, 219, 221);
+  border-radius: 12px;
   width: 100%;
 }
 
@@ -104,10 +104,10 @@ h2 {
 }
 
 .edit-btn {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background-color: #000000;
   color: white;
-  border-radius: 5px;
+  border-radius: 90px;
   border: none;
   cursor: pointer;
   font-size: 16px;
