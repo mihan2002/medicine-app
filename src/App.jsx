@@ -7,38 +7,60 @@ import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
 import UserLogin from "./pages/userLoginPage/userLogin";
 import useTokenRefresh from "./auth/useTokenRefresh";
+import AuthGuard from "./auth/authGuard"; // Import the AuthGuard
 
 function App() {
-  const { isAuthenticated, loading } = useTokenRefresh();
-  console.log("isAuthenticated :" + isAuthenticated);
-  console.log("loading :" + loading);
-  if (loading) {
-    
-    return <div>Loading...</div>;
-  }
+  useTokenRefresh();
 
   return (
     <div className="app-container">
-
       <div className="main-content">
-        
         <Routes>
-         
-          {!isAuthenticated && (
-            <Route path="*" element={<Navigate to="/login" />} />
-          )}
-          {isAuthenticated && (
-            <Route path="*" element={<Navigate to="/my-care" />} />
-          )}
-          {isAuthenticated && (
-            <>
-              <Route path="/my-care" element={<MyCarePage />} />
-              <Route path="/appointments" element={<AppointmentsPage />} />
-              <Route path="/notifications" element={<NotificationsPage />} />
-              <Route path="/find-doctor" element={<FindDoctorPage />} />
-            </>
-          )}
+          {/* Public route for login */}
           <Route path="/login" element={<UserLogin />} />
+
+          {/* Protected routes wrapped in AuthGuard */}
+          <Route
+            path="*"
+            element={
+              <AuthGuard>
+                <Navigate to="/my-care" />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/my-care"
+            element={
+              <AuthGuard>
+                <MyCarePage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/appointments"
+            element={
+              <AuthGuard>
+                <AppointmentsPage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <AuthGuard>
+                <NotificationsPage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/find-doctor"
+            element={
+              <AuthGuard>
+                <FindDoctorPage />
+              </AuthGuard>
+            }
+          />
+          {/* Unprotected route example */}
           <Route path="/test" element={<DoctorProfile />} />
         </Routes>
       </div>

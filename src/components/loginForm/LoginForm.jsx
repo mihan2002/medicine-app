@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import "./LoginForm.css";
-import useTokenRefresh from "../../auth/useTokenRefresh";
+
 
 const LoginForm = () => {
-  const { setIsAuthenticated } = useTokenRefresh();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -41,7 +40,7 @@ const LoginForm = () => {
           sameSite: "Strict",
           expires: 7, // 7 days expiry
         });
-        setIsAuthenticated(true);
+       
         navigate("/");
 
         console.log("Login successful!", data);
