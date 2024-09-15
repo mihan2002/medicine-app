@@ -7,6 +7,7 @@ import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
 import UserLogin from "./pages/userLoginPage/userLogin";
 import useTokenRefresh from "./auth/useTokenRefresh";
+import UserProfile from "./pages/userProfilePage/UserProfile";
 
 function App() {
   const { isAuthenticated, loading } = useTokenRefresh();
@@ -39,7 +40,7 @@ function App() {
             </>
           )}
           <Route path="/login" element={<UserLogin />} />
-          <Route path="/test" element={<DoctorProfile />} />
+          <Route path="/test" element={<UserProfile />} />
         </Routes>
       </div>
     </div>
