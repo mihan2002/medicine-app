@@ -1,21 +1,35 @@
 import DoctorCard from "../../components/doctorCard/DoctorCard";
-import { FaFilter } from "react-icons/fa"; 
+import { FaFilter } from "react-icons/fa";
 import Sidebar from "../../components/sidebar/Sidebar";
 import NavBar from "../../components/navBar/NavBar";
 
-import "./FindDoctorPage.css"; 
+import "./FindDoctorPage.css";
+import { useEffect } from "react";
 
 const FindDoctorPage = () => {
+  useEffect(() => {
+
+    // fetchGraphQL(query, variables)
+    //   .then((responseData) => {
+    //     console.log("API Response:", responseData);
+    //     setData(responseData);
+    //     setLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error during API call:", error);
+    //     setError(error);
+    //     setLoading(false);
+    //   });
 
 
+  }, []);
   return (
     <div className="find-doctor-page">
-      <Sidebar active="Find a Doctor"   />
+      <Sidebar active="Find a Doctor" />
       <div className="main-content">
         <NavBar
           userImageLink="/path-to-user-image.jpg"
           onProfileClick={() => console.log("Profile clicked")}
-           
         />
         <div className="doctor-list-header">
           <h2>

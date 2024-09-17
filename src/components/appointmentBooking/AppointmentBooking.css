@@ -127,3 +127,11 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+/* Time slots container with box shadow */
+.time-slots-container {
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for all time slots */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: white; /* Optional: Background color */
+  margin-top: 20px; /* Spacing from the calendar */
+}
