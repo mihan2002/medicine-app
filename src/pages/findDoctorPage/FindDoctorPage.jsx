@@ -2,27 +2,59 @@ import DoctorCard from "../../components/doctorCard/DoctorCard";
 import { FaFilter } from "react-icons/fa";
 import Sidebar from "../../components/sidebar/Sidebar";
 import NavBar from "../../components/navBar/NavBar";
-
+import { fetchGraphQL } from "../../api/GraphQl";
 import "./FindDoctorPage.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const FindDoctorPage = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
+    const query = `query GetAllDoctors {
+  getAllDoctors {
+    id
+    firstName
+    lastName
+    specialization
+    rating
+    reviews {
+      id
+    }
+    imageUrl
+  }
+}`;
 
-    // fetchGraphQL(query, variables)
-    //   .then((responseData) => {
-    //     console.log("API Response:", responseData);
-    //     setData(responseData);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error during API call:", error);
-    //     setError(error);
-    //     setLoading(false);
-    //   });
-
-
+    fetchGraphQL(query)
+      .then((responseData) => {
+        if (responseData.data) {
+          setData(responseData.data.getAllDoctors);
+        } else {
+          throw new Error("No data returned from API");
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error during API call:", error);
+        setError(error);
+        setLoading(false);
+      });
   }, []);
+
+  // If data is not available yet, do not try to loop over it
+  if (loading) {
+    return <div>Loading...</div>; // Render a loading message while the data is being fetched
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>; // Render the error message if there is an error
+  }
+
+  if (!data || data.length === 0) {
+    return <div>No doctors found</div>; // Handle case when no data is found
+  }
+
   return (
     <div className="find-doctor-page">
       <Sidebar active="Find a Doctor" />
@@ -44,12 +76,20 @@ const FindDoctorPage = () => {
             </button>
           </div>
           <div className="doctor-cards-container">
-            <DoctorCard />
-            <DoctorCard />
-            <DoctorCard />
-            <DoctorCard />
-            <DoctorCard />
-            <DoctorCard />
+            {data.map((doctor, index) => (
+              <DoctorCard
+                key={index} // Always provide a unique key
+                doctor={{
+                  id:doctor.id,
+                  firstName: `${doctor.firstName}`,
+                  lastName: `${doctor.lastName}`,
+                  specialty: doctor.specialization,
+                  rating: doctor.rating,
+                  reviews: doctor.reviews.length, // Assuming reviews is an array
+                  image: doctor.imageUrl, // Use actual image URL
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>

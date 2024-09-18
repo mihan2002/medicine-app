@@ -21,22 +21,21 @@ const MyCarePage = () => {
   const patientId = "123456"; // Replace with actual patient ID or fetch from another source
 
   useEffect(() => {
-    
-
     // Define the GraphQL query
     const query = `
-      query GetPatientByID {
-        getPatientByID {
-          firstName
-          lastName
-          gender
-        }
-      }
+      query Query{
+  getPatientByID {
+    firstName
+    lastName
+    gender
+  }
+}
+  
     `;
 
     // Define the variables for the query
     const variables = {
-      id: patientId, // Pass the patient ID
+      getPatientByIdId: patientId, // Pass the patient ID
     };
 
     // Make the API call using the fetchGraphQL method
@@ -51,7 +50,7 @@ const MyCarePage = () => {
         setError(error);
         setLoading(false);
       });
-  }, [ patientId]);
+  }, [patientId]);
 
   // Handle loading, error, and data states
   if (loading) {
@@ -64,12 +63,11 @@ const MyCarePage = () => {
 
   return (
     <div className="dashboard-container">
-      <Sidebar active="My Care"   />
+      <Sidebar active="My Care" />
       <div className="main-content">
         <NavBar
           userImageLink="/path-to-user-image.jpg"
           onProfileClick={() => console.log("Profile clicked")}
-           
         />
         <div className="grid-container">
           <div className="grid-item">

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import "./LoginForm.css";
 
-
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +39,7 @@ const LoginForm = () => {
           sameSite: "Strict",
           expires: 7, // 7 days expiry
         });
-       
+
         navigate("/");
 
         console.log("Login successful!", data);
@@ -84,17 +83,24 @@ const LoginForm = () => {
           />
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <p><a href="" className="custom-link">Forgot Password?</a></p>
+        <p>
+          <a href="" className="custom-link">
+            Forgot Password?
+          </a>
+        </p>
         <button className="login-button" type="submit">
           Login
         </button>
         <p>Or do it via other accounts</p>
         <a href="google-authlink" className="google-button">
-        <img src="src/assets/googlelogo.png" alt="google-logo" />
+          <img src="src/assets/googlelogo.png" alt="google-logo" />
         </a>
-        
+
         <p>
-          Don't have an account? <a href="#3" className="custom-link"><b>Sign Up</b></a>
+          Don't have an account?  
+          <a href="/signup" className="custom-link">
+            <b>Sign Up</b>
+          </a>
         </p>
       </form>
     </div>

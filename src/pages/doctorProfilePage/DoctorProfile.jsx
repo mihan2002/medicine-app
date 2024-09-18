@@ -5,8 +5,12 @@ import { useState } from "react";
 import AppointmentBooking from "../../components/appointmentBooking/AppointmentBooking";
 import Sidebar from "../../components/sidebar/Sidebar"; // Import Sidebar
 import NavBar from "../../components/navBar/NavBar"; // Import NavBar
+import { useParams } from "react-router-dom";
 
 const DoctorProfile = () => {
+  const { id } = useParams(); 
+  console.log(id);
+  
   const [renderBooking, setRenderBooking] = useState(false);
  
 

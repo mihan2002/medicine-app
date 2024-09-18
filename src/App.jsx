@@ -6,7 +6,6 @@ import NotificationsPage from "./pages/notificationsPage/NotificationsPage";
 import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
 import UserLogin from "./pages/userLoginPage/userLogin";
-
 import useTokenRefresh from "./auth/useTokenRefresh";
 import UserProfile from "./pages/userProfilePage/UserProfile";
 import AuthGuard from "./auth/authGuard"; // Import the AuthGuard
@@ -23,7 +22,7 @@ function App() {
           <Route path="/login" element={<UserLogin />} />
           <Route path="/signup" element={<UserSignUpPage />} />
           <Route path="/test" element={<UserProfile />} />
-          <Route path="/test2" element={<DoctorProfile />} />
+          <Route path="/doctorProfile/:id" element={<DoctorProfile />} />
 
           {/* Protected routes wrapped in AuthGuard */}
           <Route
@@ -66,8 +65,6 @@ function App() {
               </AuthGuard>
             }
           />
-          {/* Unprotected route example */}
-          <Route path="/test" element={<DoctorProfile />} />
         </Routes>
       </div>
     </div>
