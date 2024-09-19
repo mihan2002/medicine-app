@@ -21,7 +21,7 @@ function App() {
           {/* Public route for login */}
           <Route path="/login" element={<UserLogin />} />
           <Route path="/signup" element={<UserSignUpPage />} />
-          <Route path="/test" element={<UserProfile />} />
+          <Route path="/test" element={<DoctorProfile />} />
           <Route path="/doctorProfile/:id" element={<DoctorProfile />} />
 
           {/* Protected routes wrapped in AuthGuard */}

@@ -3,10 +3,14 @@
   justify-content: space-between; /* Distribute brand and right content */
   align-items: center;
   padding: 10px 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-bottom: 1px solid #ddd;
   width: 100%;
-  padding-right: 40px; /* Ensure full width of the container */
+  padding-right: 60px; /* Ensure full width of the container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-brand {
@@ -15,11 +19,12 @@
   align-items: flex-start; /* Align text to the start */
   font-size: 18px;
   font-weight: bold;
-  color: black; /* Set font color to black */
+  color: rgb(0, 0, 0); /* Set font color to black */
 }
 
 .brand-line {
   line-height: 1.2; /* Adjust line height for better spacing */
+  
 }
 
 .navbar-right {
@@ -35,6 +40,7 @@
   margin-right: 20px;
   font-size: 24px;
 }
+
 
 .notification-icon {
   font-size: 24px;

@@ -45,7 +45,8 @@
 /* Doctor list header styling */
 .doctor-list-header {
   text-align: center;
-  padding: 20px;
+  width: 100%;
+  padding: 30px;
   background-color: #f2f7ff;
   margin-bottom: 20px;
 }
@@ -53,6 +54,7 @@
 .doctor-list-header h2 {
   font-size: 24px;
   font-weight: bold;
+  text-align: center;
 }
 
 /* Search bar and filter button container */

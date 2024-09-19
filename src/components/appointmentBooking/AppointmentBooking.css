@@ -34,8 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
-  width: 100%;
+  padding: 20px;
 }
 
 /* Doctor info section (can be added later if needed) */
@@ -54,6 +53,7 @@
   width: 100%;
   max-width: 800px;
   margin-top: 20px;
+  gap: 40px;
 }
 
 /* Calendar section for date selection */
@@ -134,4 +134,8 @@
   border-radius: 8px; /* Optional: Rounded corners */
   background-color: white; /* Optional: Background color */
   margin-top: 20px; /* Spacing from the calendar */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%; 
 }
