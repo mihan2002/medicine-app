@@ -53,12 +53,8 @@ const MyCarePage = () => {
   }, [patientId]);
 
   // Handle loading, error, and data states
-  if (loading) {
+  if (loading ||error) {
     return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
   }
 
   return (

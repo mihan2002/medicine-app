@@ -44,7 +44,7 @@ const SignUpForm = () => {
         Cookies.set("access_token", data.accessToken, {
           secure: true, // Should be true in production
           sameSite: "Strict",
-          expires: 1 / 48, // 30 minutes expiry
+          expires: 1 / 12, // 30 minutes expiry
         });
 
         Cookies.set("refresh_token", data.refreshToken, {
