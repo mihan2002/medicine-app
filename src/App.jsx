@@ -6,13 +6,13 @@ import NotificationsPage from "./pages/notificationsPage/NotificationsPage";
 import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
 import UserLogin from "./pages/userLoginPage/userLogin";
-import useTokenRefresh from "./auth/useTokenRefresh";
+//import useTokenRefresh from "./auth/useTokenRefresh";
 import UserProfile from "./pages/userProfilePage/UserProfile";
 import AuthGuard from "./auth/authGuard"; // Import the AuthGuard
 import UserSignUpPage from "./pages/userSignUpPage/UserSignUpPage";
 
 function App() {
-  useTokenRefresh();
+ // useTokenRefresh();
 
   return (
     <div className="app-container">
@@ -21,7 +21,7 @@ function App() {
           {/* Public route for login */}
           <Route path="/login" element={<UserLogin />} />
           <Route path="/signup" element={<UserSignUpPage />} />
-          <Route path="/test" element={<UserProfile />} />
+          <Route path="/myprofile" element={<UserProfile />} />
           <Route path="/doctorProfile/:id" element={<DoctorProfile />} />
 
           {/* Protected routes wrapped in AuthGuard */}

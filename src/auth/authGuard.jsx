@@ -1,12 +1,43 @@
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { Navigate } from "react-router-dom";
+import { refreshToken } from "../auth/authService";
 
-// eslint-disable-next-line react/prop-types
 const AuthGuard = ({ children }) => {
-  const isAuthenticated = Cookies.get("refresh_token"); // Replace with your actual authentication logic
+  const [loading, setLoading] = useState(true); // State to manage loading
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const access_token = Cookies.get("access_token");
+      const refresh_token = Cookies.get("refresh_token");
+
+      if (!access_token && refresh_token) {
+        try {
+          await refreshToken();
+        } catch (error) {
+          console.error("Failed to refresh token", error);
+        }
+      }
+
+      if (Cookies.get("access_token")) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+
+      setLoading(false);
+    };
+
+    checkAuth();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // You can replace this with a loading spinner
+  }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" />; // Redirect to login if not authenticated
+    return <Navigate to="/login" />;
   }
 
   return children;
