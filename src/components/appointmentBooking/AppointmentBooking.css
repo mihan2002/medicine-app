@@ -139,3 +139,11 @@
   justify-content: center;
   width: 50%; 
 }
+
+.time-slots-container .MuiGrid-container {
+  justify-content: center;
+}
+.time-slots-container .MuiButton-root {
+  width: 100px; /* Ensures buttons are aligned evenly */
+  text-align: center;
+}
