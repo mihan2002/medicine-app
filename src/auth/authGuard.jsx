@@ -11,6 +11,8 @@ const AuthGuard = ({ children }) => {
     const checkAuth = async () => {
       const access_token = Cookies.get("access_token");
       const refresh_token = Cookies.get("refresh_token");
+      console.log(access_token);
+      console.log(refresh_token);
 
       if (!access_token && refresh_token) {
         try {
