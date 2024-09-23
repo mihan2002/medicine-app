@@ -53,7 +53,7 @@ const MyCarePage = () => {
   }, [patientId]);
 
   // Handle loading, error, and data states
-  if (loading ||error) {
+  if (loading || error) {
     return <div>Loading...</div>;
   }
 
@@ -91,14 +91,14 @@ const MyCarePage = () => {
             <span>Lab Results</span>
           </div>
         </div>
-        {data && data.data && data.data.getPatientByID && (
+        {/* {data && data.data && data.data.getPatientByID && (
           <div className="patient-info">
             <h3>Patient Data</h3>
             <p>First Name: {data.data.getPatientByID.firstName}</p>
             <p>Last Name: {data.data.getPatientByID.lastName}</p>
             <p>Gender: {data.data.getPatientByID.gender}</p>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
