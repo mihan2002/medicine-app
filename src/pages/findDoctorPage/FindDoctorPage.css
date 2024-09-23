@@ -1,22 +1,15 @@
 /* Container for the Find Doctor page */
 .find-doctor-page {
   display: flex;
-  flex-direction: column;
   height: 100vh;
   background-color: #f2f7ff;
-  position: relative; /* Allows positioning of child elements */
 }
 
-/* Sidebar styling aligned to the left side of the screen */
+/* Sidebar styling */
 .sidebar {
   width: 250px;
-  position: fixed;
-  left: 0; /* Aligns sidebar to the left */
-  top: 0;
-  bottom: 0;
   background-color: white;
   border-right: 1px solid #ddd;
-  z-index: 1; /* Ensures it's on top of other content */
 }
 
 /* Main content area styling */
@@ -25,28 +18,26 @@
   display: flex;
   flex-direction: column;
   background-color: #f2f7ff;
-  margin-left: 150px; /* Leaves space for sidebar */
-  margin-top: 50px;
+  padding: 0 28px;
 }
 
-/* Navbar aligned to the top */
+/* Inner main content styling */
+.inner-main-content {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 10px;
+}
+
+/* Navbar container */
 .navbar-container {
-  width: 88%;
-  position: fixed;
-  top: 0; /* Aligns navbar to the top */
-  left: 250px; /* Leaves space for sidebar */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   padding: 10px 20px;
   background-color: white;
   border-bottom: 1px solid #ddd;
-  z-index: 1; /* Ensures it stays on top */
-}
-
-/* Main content should be below the navbar */
-.inner-main-content {
-  margin-top: 70px; /* Adjusts space for fixed navbar */
-  padding: 20px;
-  background-color: white;
-  flex-grow: 1;
 }
 
 /* Doctor list header styling */
@@ -62,6 +53,7 @@
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  
 }
 
 /* Search bar and filter button container */
@@ -88,7 +80,7 @@
   justify-content: center;
   padding: 10px 20px;
   background-color: #1a73e8;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 20px;
   border: none;
   cursor: pointer;
@@ -106,10 +98,6 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px;
 }
 
 /* Individual doctor card styling */
@@ -121,36 +109,17 @@
   text-align: center;
 }
 
-/* Doctor card header (Name and Rating) */
-.doctor-card h4 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Doctor card specialization and reviews */
-.doctor-card p {
-  margin: 0;
-  color: #666;
-  font-size: 14px;
-}
-
-/* Responsive Adjustments */
 
 /* Large Screens (Desktops and laptops) - Default */
 @media (min-width: 1024px) {
   .find-doctor-page {
     padding: 20px;
   }
-
+  
   .sidebar {
     width: 250px;
   }
-
-  .doctor-container {
-    padding: 60px;
-  }
-
+  
   .doctor-cards-container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
@@ -168,12 +137,15 @@
     height: auto;
     border-right: none;
     border-bottom: 1px solid #ddd;
-    position: relative;
   }
 
   .main-content {
     padding: 20px;
-    margin-left: 0;
+  }
+
+  .inner-main-content {
+    margin: 0;
+    padding: 15px;
   }
 
   .doctor-cards-container {
@@ -207,6 +179,11 @@
 
   .main-content {
     padding: 15px;
+  }
+
+  .inner-main-content {
+    padding: 10px;
+    margin: 0;
   }
 
   .doctor-cards-container {
