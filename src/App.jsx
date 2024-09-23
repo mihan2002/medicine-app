@@ -1,31 +1,70 @@
-import { Routes, Route } from "react-router-dom"; // Import Routes and Route
+import { Routes, Route, Navigate } from "react-router-dom";
 import FindDoctorPage from "./pages/findDoctorPage/FindDoctorPage";
 import MyCarePage from "./pages/myCarePage/myCarePage";
 import AppointmentsPage from "./pages/appointmentsPage/AppointmentsPage";
 import NotificationsPage from "./pages/notificationsPage/NotificationsPage";
-import Sidebar from "./components/sidebar/Sidebar";
-import NavBar from "./components/navBar/NavBar";
-import { GlobalContext } from "./GlobalContext";
-import { useContext } from "react";
 import "./App.css";
 import DoctorProfile from "./pages/doctorProfilePage/DoctorProfile";
-
+import UserLogin from "./pages/userLoginPage/userLogin";
+//import useTokenRefresh from "./auth/useTokenRefresh";
+import UserProfile from "./pages/userProfilePage/UserProfile";
+import AuthGuard from "./auth/authGuard"; // Import the AuthGuard
+import UserSignUpPage from "./pages/userSignUpPage/UserSignUpPage";
 
 function App() {
-  const { globalVariable } = useContext(GlobalContext);
-  
-      
+  // useTokenRefresh();
+
   return (
     <div className="app-container">
-      <Sidebar />
       <div className="main-content">
-        <NavBar isSidebarCollapsed={globalVariable}/>
         <Routes>
-        <Route path="/test" element={<DoctorProfile />} />
-          <Route path="/my-care" element={<MyCarePage />} />
-          <Route path="/appointments" element={<AppointmentsPage />} />
-          <Route path="/notifications" element={<NotificationsPage />} />
-          <Route path="/find-doctor" element={<FindDoctorPage />} />
+          {/* Public route for login */}
+          <Route path="/login" element={<UserLogin />} />
+          <Route path="/signup" element={<UserSignUpPage />} />
+          <Route path="/myprofile" element={<UserProfile />} />
+          <Route path="/doctorProfile/:id" element={<DoctorProfile />} />
+
+          {/* Protected routes wrapped in AuthGuard */}
+          <Route
+            path="*"
+            element={
+              <AuthGuard>
+                <Navigate to="/my-care" />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/my-care"
+            element={
+              <AuthGuard>
+                <MyCarePage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/appointments"
+            element={
+              <AuthGuard>
+                <AppointmentsPage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <AuthGuard>
+                <NotificationsPage />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/find-doctor"
+            element={
+              <AuthGuard>
+                <FindDoctorPage />
+              </AuthGuard>
+            }
+          />
         </Routes>
       </div>
     </div>

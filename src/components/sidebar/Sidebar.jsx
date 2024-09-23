@@ -5,17 +5,16 @@ import {
   FaBell,
   FaSearch,
   FaBars,
-} from "react-icons/fa"; // Added FaBars for toggle button
+} from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import logo from "./logo.png";
 import { GlobalContext } from "../../GlobalContext";
 
-// eslint-disable-next-line react/prop-types
 const Sidebar = ({ active }) => {
   const [activeItem, setActiveItem] = useState(active);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const { setGlobalVariable } = useContext(GlobalContext);
+  const { isCollapese, setIsCollapese } = useContext(GlobalContext);
+
   const navigate = useNavigate();
 
   const handleItemClick = (itemName, route) => {
@@ -24,20 +23,19 @@ const Sidebar = ({ active }) => {
   };
 
   const handleToggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
-    setGlobalVariable(!isCollapsed);
+    setIsCollapese(!isCollapese); // Update global state to collapse or expand sidebar
   };
 
   return (
-    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+    <div className={`sidebar ${isCollapese ? "collapsed" : ""}`}>
       <div className="sidebar-header">
-        {!isCollapsed && (
+        {!isCollapese && (
           <>
             <button className="toggle-btn" onClick={handleToggleSidebar}>
               <img
                 src={logo}
                 alt="Logo"
-                className={`sidebar-logo ${isCollapsed ? "hidden" : ""}`}
+                className={`sidebar-logo ${isCollapese ? "hidden" : ""}`}
               />
               <div className="sidebar-brand">
                 <span>MedAi</span>
@@ -46,7 +44,7 @@ const Sidebar = ({ active }) => {
             </button>
           </>
         )}
-        {isCollapsed && (
+        {isCollapese && (
           <>
             <button className="toggle-btn" onClick={handleToggleSidebar}>
               <FaBars size={20} />
@@ -63,7 +61,7 @@ const Sidebar = ({ active }) => {
             size={20}
             color={activeItem === "My Care" ? "#1A73E8" : "#B0B0B0"}
           />
-          {!isCollapsed && <span>My Care</span>}
+          {!isCollapese && <span>My Care</span>}
         </li>
         <li
           className={`menu-item ${
@@ -75,7 +73,7 @@ const Sidebar = ({ active }) => {
             size={20}
             color={activeItem === "Appointments" ? "#1A73E8" : "#B0B0B0"}
           />
-          {!isCollapsed && <span>Appointments</span>}
+          {!isCollapese && <span>Appointments</span>}
         </li>
         <li
           className={`menu-item ${
@@ -87,7 +85,7 @@ const Sidebar = ({ active }) => {
             size={20}
             color={activeItem === "Notifications" ? "#1A73E8" : "#B0B0B0"}
           />
-          {!isCollapsed && <span>Notifications</span>}
+          {!isCollapese && <span>Notifications</span>}
         </li>
         <li
           className={`menu-item ${
@@ -99,7 +97,7 @@ const Sidebar = ({ active }) => {
             size={20}
             color={activeItem === "Find a Doctor" ? "#1A73E8" : "#B0B0B0"}
           />
-          {!isCollapsed && <span>Find a Doctor</span>}
+          {!isCollapese && <span>Find a Doctor</span>}
         </li>
       </ul>
     </div>

@@ -1,129 +1,149 @@
+/* Full page container with sidebar and content */
+.appointment-booking-page {
+  display: flex;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: white;
+  border-right: 1px solid #ddd;
+}
+
+/* Main content area for the appointment booking */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar styling */
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Appointment booking container */
 .appointment-booking-container {
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-  }
-  
-  .doctor-info-section {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .doctor-header {
-    display: flex;
-    align-items: center;
-  }
-  
-  .doctor-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .doctor-details {
-    margin-left: 20px;
-    text-align: left;
-  }
-  
-  .doctor-details h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .specialty,
-  .experience {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .divider {
-    margin: 20px 0;
-    border: none;
-    border-top: 1px solid #ddd;
-  }
-  
-  .appointment-booking-section {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-  }
-  
-  .calendar-section {
-    width: 45%;
-  }
-  
-  .calendar {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .calendar-date {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .calendar-date.selected {
-    background-color: #1a73e8;
-    color: white;
-  }
-  
-  .time-slots-section {
-    width: 45%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .time-slot {
-    width: 100px;
-    height: 40px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .time-slot.selected {
-    background-color: #1a73e8;
-    color: white;
-  }
-  
-  .select-date-first {
-    padding: 20px;
-    font-size: 16px;
-    color: #666;
-  }
-  
-  .confirm-appointment-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .confirm-appointment-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Doctor info section (can be added later if needed) */
+.doctor-info-section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-booking-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+/* Calendar section for date selection */
+.calendar-section {
+  width: 45%;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-date {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-date.selected {
+  background-color: #1a73e8;
+  color: white;
+}
+
+/* Time slots section for time selection */
+.time-slots-section {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.time-slot {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.time-slot.selected {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.select-date-first {
+  padding: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.confirm-appointment-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirm-appointment-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Time slots container with box shadow */
+.time-slots-container {
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for all time slots */
+  border-radius: 8px; /* Optional: Rounded corners */
+  background-color: white; /* Optional: Background color */
+  margin-top: 20px; /* Spacing from the calendar */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%; 
+}
+
+.time-slots-container .MuiGrid-container {
+  justify-content: center;
+}
+.time-slots-container .MuiButton-root {
+  width: 100px; /* Ensures buttons are aligned evenly */
+  text-align: center;
+}

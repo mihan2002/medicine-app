@@ -1,16 +1,9 @@
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import "./DoctorCard.css"; // Assuming you will create a CSS file for styling
 
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
-import './DoctorCard.css'; // Assuming you will create a CSS file for styling
-
-const DoctorCard = () => {
-  // Dummy data; you can replace this with props or state
-  const doctor = {
-    name: 'Dr. Jane Doe',
-    specialty: 'Specialist - Cardiology',
-    rating: 3.8,
-    reviews: 224,
-    image: 'https://via.placeholder.com/80', // Replace with actual image URL
-  };
+const DoctorCard = ({ doctor }) => {
+  const navigate = useNavigate(); // Initialize the navigate hook
 
   // Function to render stars based on rating
   const renderStars = () => {
@@ -32,17 +25,22 @@ const DoctorCard = () => {
     return stars;
   };
 
+  // Function to handle navigation to doctor profile
+  const handleViewProfile = () => {
+    navigate(`/doctorProfile/${doctor.id}`); // Navigate to doctorProfile and pass the doctor ID
+  };
+
   return (
     <div className="doctor-card">
-      <img src={doctor.image} alt={doctor.name} className="doctor-image" />
-      <h3 className="doctor-name">{doctor.name}</h3>
+      <img src={doctor.image} alt={doctor.firstName} className="doctor-image" />
+      <h3 className="doctor-name">{doctor.firstName} {doctor.lastName}</h3>
       <p className="doctor-specialty">{doctor.specialty}</p>
       <div className="doctor-rating">
         {renderStars()}
         <span className="rating-value">{doctor.rating}</span>
         <span className="review-count">{doctor.reviews} reviews</span>
       </div>
-      <button className="view-button">View</button>
+      <button className="view-button" onClick={handleViewProfile}>View</button> {/* Call handleViewProfile on button click */}
     </div>
   );
 };

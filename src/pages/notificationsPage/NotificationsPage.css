@@ -1,57 +1,70 @@
-/* Main container for the notifications page */
+/* Container for the notifications page */
 .notifications-container {
-    display: flex;
-    height: 100vh;
-    background-color: #f2f7ff; /* Matching background color */
-  }
-  
-  .sidebar {
-    width: 250px;
-    background-color: white;
-    border-right: 1px solid #ddd;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #f2f7ff;
-  }
-  .notification-container{
-    padding: 60px;
-  }
-  .notifications-content {
-    border-radius: 10px;
-    margin: 20px;
-    padding: 40px;
-    background-color: #ffffff;
+  display: flex;
+  height: 100vh;
+  background-color: #f2f7ff; /* Matching background color */
+}
 
-  }
-  
-  .notifications-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* Notification card styles */
-  .notification-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .notification-card h4 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .notification-card p {
-    margin: 0;
-    color: #666;
-  }
-  
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: white;
+  border-right: 1px solid #ddd;
+}
+
+/* Main content area styling */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f7ff;
+}
+
+/* Navbar container */
+.navbar-container {
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Notification content container */
+.notification-container {
+  padding: 60px;
+}
+
+/* Notifications box styling */
+.notifications-content {
+  border-radius: 10px;
+  margin: 20px;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Notifications title styling */
+.notifications-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Notification card styles */
+.notification-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.notification-card h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.notification-card p {
+  margin: 0;
+  color: #666;
+}

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter";
   background-color: #f2f7ff;
@@ -53,47 +60,6 @@ body {
 .menu-item span {
   margin-left: 10px;
 }
-
-/* Navbar Styles */
-.navbar-container {
-  height: 100px;
-  background-color: white;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
-
-.notification-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.notification-icon {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.user-profile-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.user-profile-img:hover {
-  border: 2px solid #1a73e8;
-}
-
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
