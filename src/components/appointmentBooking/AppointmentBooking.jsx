@@ -29,14 +29,10 @@ const AppointmentBooking = () => {
 
       fetchGraphQL(query, variables).then((appointments) => {
         const datesArray = appointments.data.getUpcomingAppointmentById;
- 
-        datesArray.forEach(element => {
-          console.log(element);
-          
-        });
+
+        setAppointmentDates(datesArray);
         // Append the new dates to the current state using functional update
         console.log(datesArray);
-        
       });
     } catch (error) {
       console.log(error);
@@ -129,6 +125,49 @@ const AppointmentBooking = () => {
     }
   };
 
+  const checkAvailability = (selectedTime, selectedDate, appointmentDates) => {
+    // Format the date into YYYY-MM-DD
+    const year = selectedDate.$y;
+    const month = String(selectedDate.$M + 1).padStart(2, "0"); // Months are 0-indexed, so add 1
+    const day = String(selectedDate.$D).padStart(2, "0");
+
+    // Convert 12-hour time format to 24-hour format
+    const [time, modifier] = selectedTime.split(" "); // Split time and AM/PM
+    let [hours, minutes] = time.split(":"); // Split hours and minutes
+
+    if (hours === "12") {
+      hours = "00"; // Handle the special case for 12 AM
+    }
+
+    if (modifier === "PM" && hours !== "12") {
+      hours = parseInt(hours, 10) + 12; // Convert PM hours (except for 12 PM)
+    }
+
+    // Format the time part into HH:mm:ss.SSS
+    const formattedTime = `${String(hours).padStart(2, "0")}:${minutes}:00.000`;
+
+    // Combine date and time into final ISO string
+    const isoString = `${year}-${month}-${day}T${formattedTime}+00:00`;
+
+    // Convert both the isoString and the dates to the same format without timezone differences
+    const formattedISODate = new Date(isoString).toISOString();
+
+    // Check if the formatted ISO string exists in the dates array using forEach
+    let isAvailable = true;
+    if (appointmentDates.length !== 0) {
+      appointmentDates.forEach((date) => {
+        const formattedDateInList = new Date(date.date).toISOString();
+        if (formattedDateInList === formattedISODate) {
+          console.log("booked");
+          isAvailable = false; // Set isAvailable to false if a match is found
+        }
+      });
+    }
+
+    // Return true if the date is available, otherwise false
+    return isAvailable;
+  };
+
   return (
     <div className="appointment-booking-container">
       <Typography variant="h4" gutterBottom>
@@ -153,17 +192,40 @@ const AppointmentBooking = () => {
         <div className="time-slots-container">
           {selectedDate ? (
             <Grid container spacing={2}>
-              {availableSlots.map((slot, index) => (
-                <Grid item key={index}>
-                  <Button
-                    variant={selectedTime === slot ? "contained" : "outlined"}
-                    color="primary"
-                    onClick={() => handleTimeClick(slot)}
-                  >
-                    {slot}
-                  </Button>
-                </Grid>
-              ))}
+              {availableSlots.map((slot, index) => {
+                // Check if the slot is available using the checkAvailability function
+                const isAvailable = checkAvailability(
+                  slot,
+                  selectedDate,
+                  appointmentDates
+                );
+                return (
+                  <Grid item key={index}>
+                    {isAvailable ? (
+                      <Button
+                        variant={
+                          selectedTime === slot ? "contained" : "outlined"
+                        }
+                        color="primary"
+                        onClick={() => handleTimeClick(slot)}
+                      >
+                        {slot}
+                      </Button>
+                    ) : (
+                      <Button
+                        variant={
+                          selectedTime === slot ? "contained" : "outlined"
+                        }
+                        color="primary"
+                        
+                        disabled={true}
+                      >
+                        {slot}
+                      </Button>
+                    )}
+                  </Grid>
+                );
+              })}
             </Grid>
           ) : (
             <Typography variant="body1" color="textSecondary">

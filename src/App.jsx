@@ -12,7 +12,7 @@ import AuthGuard from "./auth/authGuard"; // Import the AuthGuard
 import UserSignUpPage from "./pages/userSignUpPage/UserSignUpPage";
 
 function App() {
- // useTokenRefresh();
+  // useTokenRefresh();
 
   return (
     <div className="app-container">

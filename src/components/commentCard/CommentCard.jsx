@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./CommentCard.css";
 
 const Comment = ({ reviewerImage, reviewerName, reviewDate, reviewText }) => {

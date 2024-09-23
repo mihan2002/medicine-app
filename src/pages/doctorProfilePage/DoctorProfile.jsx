@@ -22,23 +22,25 @@ const DoctorProfile = () => {
   getDoctorById(id: $getDoctorByIdId) {
     firstName
     lastName
+    imageUrl
+    dateOfBirth
+    gender
+    email
     specialization
-    professionStartedYear
-    rating
+    contactNumber
+    videoVisitHours
     about
     qualifications
     professionalBackground
-    contactInformation {
-      email
-      phone
-    }
+    languagesSpoken
+    professionStartedYear
     reviews {
-      createdAt
-      comment
       user {
         firstName
         lastName
       }
+      comment
+      createdAt
     }
   }
 }`;
@@ -111,7 +113,7 @@ const DoctorProfile = () => {
                 className="doctor-img"
               />
               <div className="doctor-details">
-                <h2>Dr. John Doe</h2>
+                <h2>{data.firstName + " " + data.lastName}</h2>
                 <p className="specialty">{data.specialization}</p>
                 <p className="experience">{data.professionStartedYear}</p>
                 <div className="doctor-rating">
@@ -132,18 +134,21 @@ const DoctorProfile = () => {
                 <DoctorInfo />
                 <div className="reviews-section">
                   <h3>Reviews</h3>
-                  <Comment
-                    reviewerImage="https://via.placeholder.com/40"
-                    reviewerName="Peter Briers"
-                    reviewDate="3 days ago"
-                    reviewText="Dr. John Doe provided excellent care during my recent consultation. He was attentive, thorough, and answered all my questions with patience. I highly recommend!"
-                  />
-                  <Comment
-                    reviewerImage="https://via.placeholder.com/40"
-                    reviewerName="Anne Johnson"
-                    reviewDate="10 days ago"
-                    reviewText="Dr. John Doe was fantastic during our recent video consultation. He was prompt, professional, and made me feel at ease. I'm very satisfied with his service!"
-                  />
+                  {Array.isArray(data.reviews) && data.reviews.length > 0 ? (
+                    data.reviews.map((review, index) => (
+                      <Comment
+                        key={index}
+                        reviewerImage="https://via.placeholder.com/40"
+                        reviewerName={`${review.user.firstName} ${review.user.lastName}`}
+                        reviewDate={new Date(
+                          parseInt(review.createdAt)
+                        ).toLocaleDateString()}
+                        reviewText={review.comment}
+                      />
+                    ))
+                  ) : (
+                    <p>No reviews yet.</p>
+                  )}
                 </div>
               </>
             )}
