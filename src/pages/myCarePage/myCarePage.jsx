@@ -11,48 +11,41 @@ import {
 import { fetchGraphQL } from "../../api/GraphQl";
 import Sidebar from "../../components/sidebar/Sidebar";
 import NavBar from "../../components/navBar/NavBar";
+import { Link } from "react-router-dom";
 
 const MyCarePage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Example patient ID (replace this with dynamic data)
-  const patientId = "123456"; // Replace with actual patient ID or fetch from another source
+  const patientId = "123456";
 
   useEffect(() => {
-    // Define the GraphQL query
     const query = `
       query Query{
-  getPatientByID {
-    firstName
-    lastName
-    gender
-  }
-}
-  
+        getPatientByID {
+          firstName
+          lastName
+          gender
+        }
+      }
     `;
 
-    // Define the variables for the query
     const variables = {
-      getPatientByIdId: patientId, // Pass the patient ID
+      getPatientByIdId: patientId,
     };
 
-    // Make the API call using the fetchGraphQL method
     fetchGraphQL(query, variables)
       .then((responseData) => {
-        console.log("API Response:", responseData);
         setData(responseData);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error during API call:", error);
         setError(error);
         setLoading(false);
       });
   }, [patientId]);
 
-  // Handle loading, error, and data states
   if (loading || error) {
     return <div>Loading...</div>;
   }
@@ -66,39 +59,57 @@ const MyCarePage = () => {
           onProfileClick={() => console.log("Profile clicked")}
         />
         <div className="grid-container">
-          <div className="grid-item">
-            <FaClipboard className="grid-icon" />
-            <span>Appointment Manager</span>
-          </div>
-          <div className="grid-item">
-            <FaPills className="grid-icon" />
-            <span>Prescriptions</span>
-          </div>
-          <div className="grid-item">
-            <FaQuestionCircle className="grid-icon" />
-            <span>Ask a Doctor</span>
-          </div>
-          <div className="grid-item">
-            <FaEnvelope className="grid-icon" />
-            <span>Messages</span>
-          </div>
-          <div className="grid-item">
-            <FaSearch className="grid-icon" />
-            <span>Find a Doctor</span>
-          </div>
-          <div className="grid-item">
-            <FaVial className="grid-icon" />
-            <span>Lab Results</span>
-          </div>
+          <Link to="/appointment-manager">
+            <div className="grid-item">
+              <FaClipboard className="grid-icon" />
+              <span>Appointment Manager</span>
+            </div>
+          </Link>
+
+          <Link to="/prescriptions">
+            <div className="grid-item">
+              <FaPills className="grid-icon" />
+              <span>Prescriptions</span>
+            </div>
+          </Link>
+
+          <Link to="/ask-a-doctor">
+            <div className="grid-item">
+              <FaQuestionCircle className="grid-icon" />
+              <span>Ask a Doctor</span>
+            </div>
+          </Link>
+
+          <Link to="/messages">
+            <div className="grid-item">
+              <FaEnvelope className="grid-icon" />
+              <span>Messages</span>
+            </div>
+          </Link>
+
+          <Link to="/find-doctor">
+            <div className="grid-item">
+              <FaSearch className="grid-icon" />
+              <span>Find a Doctor</span>
+            </div>
+          </Link>
+
+          <Link to="/lab-results">
+            <div className="grid-item">
+              <FaVial className="grid-icon" />
+              <span>Lab Results</span>
+            </div>
+          </Link>
         </div>
-        {/* {data && data.data && data.data.getPatientByID && (
+
+        {data && data.data && data.data.getPatientByID && (
           <div className="patient-info">
             <h3>Patient Data</h3>
             <p>First Name: {data.data.getPatientByID.firstName}</p>
             <p>Last Name: {data.data.getPatientByID.lastName}</p>
             <p>Gender: {data.data.getPatientByID.gender}</p>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

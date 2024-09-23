@@ -1,21 +1,61 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import NavBar from "../../components/navBar/NavBar";
-import "./UserProfile.css"; 
+import "./UserProfile.css";
+import { fetchGraphQL } from "../../api/GraphQl";
 
 const UserProfile = () => {
-  // Define the initial state for the user profile
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const patientId = "123456";
+  useEffect(() => {
+    const query = `
+      query Query {
+        getPatientByID {
+          firstName
+          lastName
+          dateOfBirth
+          gender
+          height
+          weight
+          email
+          ethnicity
+          languagesSpoken
+        }
+      }
+    `;
+
+    const variables = {
+      getPatientByIdId: patientId,
+    };
+
+    fetchGraphQL(query, variables)
+      .then((responseData) => {
+        setUserData(responseData.data.getPatientByID);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, [patientId]);
+
+  console.log(userData);
+  
+
   const initialProfile = {
-    firstName: 'John',
-    lastName: 'Doe',
-    dateOfBirth: '1990-01-01',
-    gender: 'Male',
-    height: '180 cm',
-    weight: '75 kg',
-    ethnicity: 'Caucasian',
-    languages: ['English', 'Spanish'],
-    email: 'johndoe@example.com',
-    password: '********'
+    firstName: "John",
+    lastName: "Doe",
+    dateOfBirth: "1990-01-01",
+    gender: "Male",
+    height: "180 cm",
+    weight: "75 kg",
+    ethnicity: "Caucasian",
+    languages: ["English", "Spanish"],
+    email: "johndoe@example.com",
+    password: "********",
   };
 
   // Set up state to handle edit mode and profile data
@@ -44,7 +84,7 @@ const UserProfile = () => {
         <div className="inner-main-content">
           <div className="profile-container">
             <h2>Your Details</h2>
-            
+
             {/* First Name and Last Name */}
             <div className="info-row">
               <div className="info-box">
@@ -190,18 +230,18 @@ const UserProfile = () => {
                 <input
                   type="text"
                   name="languages"
-                  value={userProfile.languages.join(', ')}
+                  value={userProfile.languages.join(", ")}
                   onChange={handleChange}
                 />
               ) : (
-                <p>{userProfile.languages.join(', ')}</p>
+                <p>{userProfile.languages.join(", ")}</p>
               )}
             </div>
 
             {/* Edit/Save Button */}
             <div className="info-box full-width">
               <button className="edit-btn" onClick={handleEditClick}>
-                {isEditing ? 'Save' : 'Edit Info'}
+                {isEditing ? "Save" : "Edit Info"}
               </button>
             </div>
           </div>
